@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculator — PepTiter</title>
+<meta name="description" content="The reconstitution and dosing calculator. Enter your vial's concentration and target dose — we'll show the units. Usable instantly, no signup.">
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="topbar-brand" href="/">PepTiter</a>
+  <nav class="topbar-nav" aria-label="Primary">
+    <a href="/library.html">Library</a>
+    <a href="/calculator.html" aria-current="page">Calculator</a>
+    <a href="/how-we-think.html">How we think</a>
+  </nav>
+  <div class="topbar-right">
+    <a class="status-pill" href="/calculator.html">Calculator — no signup</a>
+  </div>
+</header>
+
+<!-- The calculator is an instrument: Paper-only tool surface (D-011) -->
+<main class="canvas-paper">
+
+  <div class="page-head">
+    <p class="label label--xs section-index">020 — Calculator</p>
+    <h1 class="heading">Reconstitution calculator</h1>
+    <p class="subheading measure">Enter your vial's concentration and target
+      dose — we'll show the units.</p>
+    <div class="tag-row">
+      <span class="tag">No signup</span>
+      <span class="tag">Usable instantly</span>
+    </div>
+  </div>
+
+  <section class="section" style="padding-top: var(--space-24);">
+    <form id="calc" class="calc" onsubmit="return false;">
+
+      <div class="calc-fields">
+        <div class="field">
+          <label class="label label--xs" for="vial-mg">Peptide in vial</label>
+          <div class="field-input">
+            <input id="vial-mg" type="number" inputmode="decimal" min="0" step="any" value="5">
+            <span class="field-unit">mg</span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label label--xs" for="water-ml">Bacteriostatic water added</label>
+          <div class="field-input">
+            <input id="water-ml" type="number" inputmode="decimal" min="0" step="any" value="2">
+            <span class="field-unit">mL</span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label label--xs" for="dose-mg">Target dose</label>
+          <div class="field-input">
+            <input id="dose-mg" type="number" inputmode="decimal" min="0" step="any" value="0.25">
+            <span class="field-unit">mg</span>
+          </div>
+        </div>
+        <p class="label label--xs muted">Prefilled with a generic
+          unit-conversion sample — not a protocol recommendation for any named
+          peptide</p>
+      </div>
+
+      <div class="calc-output">
+        <p class="disclaimer disclaimer--inline">Educational only — not medical advice</p>
+        <output class="dose-readout" id="readout" for="vial-mg water-ml dose-mg">0.25 mg → 10 units · U-100</output>
+        <div class="calc-steps">
+          <div class="calc-step">
+            <span class="label label--xs muted">Concentration</span>
+            <span class="data" id="step-conc">—</span>
+          </div>
+          <div class="calc-step">
+            <span class="label label--xs muted">Volume to draw</span>
+            <span class="data" id="step-vol">—</span>
+          </div>
+          <div class="calc-step">
+            <span class="label label--xs muted">U-100 insulin syringe</span>
+            <span class="data" id="step-units">—</span>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="stack-16 measure">
+      <h2 class="heading heading--sm">What this does</h2>
+      <p class="longform">The calculator does unit math on the values you enter —
+        it converts concentration and target dose into syringe units. It does not
+        originate protocol recommendations. Lyophilized (freeze-dried) peptides
+        are reconstituted with bacteriostatic water and typically dosed via an
+        insulin syringe measured in units.</p>
+      <p class="longform">An account only saves your work — the math is open to
+        everyone.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="canvas-ink">
+  <p class="disclaimer">Educational only — not medical advice</p>
+  <div class="footer">
+    <a class="footer-brand" href="/">PepTiter</a>
+    <div class="footer-grid">
+      <p class="muted longform">A free, web-based peptide tracker. Harm-reduction
+        framing, sources cited, not medical advice. GLP-1s are prescription
+        medications; many other peptides are sold as research chemicals not
+        approved for human consumption — they are not the same thing.</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/library.html">Library</a>
+        <a href="/calculator.html">Calculator</a>
+        <a href="/how-we-think.html">How we think</a>
+        <a href="/paths/weight-loss.html">Weight-loss path</a>
+        <a href="/paths/performance.html">Performance path</a>
+        <a href="/paths/recovery.html">Recovery path</a>
+        <a href="/paths/longevity.html">Longevity path</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<a class="float-cta" href="/#account">Create free account ↗</a>
+<a class="edge-tab" href="/how-we-think.html">How we think</a>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

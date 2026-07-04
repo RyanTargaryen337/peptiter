@@ -1,0 +1,705 @@
+/* ============================================================
+   PepTiter — main.css
+   Every value here traces to DESIGN.md. Tokens are §9 verbatim;
+   components are §6; layout is §5. Deviations are bugs.
+   ============================================================ */
+
+:root {
+  /* Color — brand (BRAND.md §3) + dark-canvas additions (D-019) */
+  --brand-teal: #0F766E;
+  --teal-tint: #E6F4F1;
+  --teal-deep: #0B5A54;
+  --teal-light: #7FD1C5;          /* dark-canvas data/links only */
+  --ink: #16212B;
+  --slate: #5C6A67;
+  --mist: #EDF0EE;
+  --paper: #FBFAF6;
+  --white: #FFFFFF;
+  --paper-muted: rgba(251,250,246,.64); /* dark-canvas secondary text */
+
+  --path-weightloss: #3E6FA3;  --path-weightloss-tint: #ECF1F7;
+  --path-performance: #BE5A3C; --path-performance-tint: #F7ECE7;
+  --path-recovery: #5E8C62;    --path-recovery-tint: #EDF3EE;
+  --path-longevity: #6A5CA0;   --path-longevity-tint: #EEECF5;
+
+  /* Type — brand faces (BRAND.md §4) */
+  --font-display: 'DM Serif Display', Georgia, serif; /* swap on license — D-003 */
+  --font-heading: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* Scale (D-013) */
+  --text-display: 64px;  --leading-display: 1.05;
+  --text-heading: 48px;  --text-heading-sm: 32px;
+  --leading-heading: 1.0; --tracking-heading: 0.042em;
+  --text-subheading: 18px; --leading-subheading: 1.4;
+  --text-body: 16px; --leading-body-longform: 1.6; --leading-body-ui: 1.4;
+  --text-caption: 11px; --tracking-caption: 0.109em;
+
+  /* Spacing */
+  --space-4: 4px; --space-8: 8px; --space-10: 10px; --space-16: 16px;
+  --space-20: 20px; --space-24: 24px; --space-48: 48px;
+  --space-80: 80px; --space-100: 100px;
+  --section-pad: var(--space-80);
+  --section-gap: var(--space-48);
+  --element-gap: var(--space-10);
+
+  /* Radius tiers (D-009) */
+  --radius-precise: 4px;
+  --radius-soft: 24px;
+  --radius-pill: 84px;
+
+  /* Borders */
+  --border-structural: 1px solid var(--ink);
+  --border-hairline: 0.5px solid var(--mist);
+
+  /* Elevation — floating chrome only (D-023) */
+  --shadow-float: 0 4px 12px rgba(0,0,0,.15);
+  --shadow-card: 0 2px 8px rgba(0,0,0,.08);
+
+  /* Gutters (§5): 24 mobile / 48 desktop */
+  --gutter: var(--space-24);
+}
+
+@media (min-width: 768px) {
+  :root { --gutter: var(--space-48); }
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body-ui);
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+
+::selection { background: var(--teal-tint); color: var(--teal-deep); }
+
+:focus-visible {
+  outline: 2px solid var(--brand-teal);
+  outline-offset: 2px;
+}
+.canvas-ink :focus-visible { outline-color: var(--teal-light); }
+
+/* ============================================================
+   Type voices
+   ============================================================ */
+
+/* Mono label register (D-014 #2): 10–11px, 500–600, caps, wide tracking */
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caption);
+  line-height: 1.4;
+}
+.label--strong { font-weight: 600; }
+.label--xs { font-size: 10px; letter-spacing: 0.086em; }
+
+/* Mono data register (D-014 #1): sized to context, 500, normal tracking */
+.data {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  color: var(--brand-teal);
+}
+.canvas-ink .data { color: var(--teal-light); }
+
+/* Space Grotesk display headings — all-caps (D-010) */
+.heading {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: var(--text-heading-sm);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+@media (min-width: 768px) {
+  .heading { font-size: var(--text-heading); }
+}
+.heading--sm { font-size: var(--text-heading-sm) !important; }
+
+/* Subheading — sentence case */
+.subheading {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--text-subheading);
+  line-height: var(--leading-subheading);
+  letter-spacing: -0.01em;
+}
+
+/* Serif — hero display only (D-004) */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(40px, 7vw, var(--text-display));
+  line-height: var(--leading-display);
+  text-wrap: balance;
+}
+
+/* Long-form body (D-020, D-024) */
+.longform { line-height: var(--leading-body-longform); max-width: 72ch; }
+.longform p + p { margin-top: var(--space-16); }
+
+.muted { color: var(--slate); }
+.canvas-ink .muted { color: var(--paper-muted); }
+
+/* ============================================================
+   Canvases (§2 — canvas flip is the section-break mechanism)
+   ============================================================ */
+.canvas-paper { background: var(--paper); color: var(--ink); }
+.canvas-ink   { background: var(--ink);   color: var(--paper); }
+
+.section {
+  padding: var(--section-pad) var(--gutter);
+}
+.section--tall { padding-top: var(--space-100); padding-bottom: var(--space-100); }
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--element-gap);
+  margin-bottom: var(--section-gap);
+}
+.section-index {
+  color: var(--slate);
+}
+.canvas-ink .section-index { color: var(--paper-muted); }
+
+/* ============================================================
+   Top bar — three zones (§5/§6), transparent, sticky
+   ============================================================ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-16);
+  padding: var(--space-16) var(--gutter);
+  background: transparent;
+  color: var(--ink);
+}
+.topbar.over-ink { color: var(--paper); }
+/* keep legibility while sticky over long scrolls: paint the current canvas */
+.topbar.is-stuck { background: var(--paper); border-bottom: var(--border-structural); }
+.topbar.is-stuck.over-ink { background: var(--ink); border-bottom: 1px solid var(--paper); }
+
+.topbar-brand {
+  font-family: var(--font-display);
+  font-size: 22px;
+  text-decoration: none;
+  line-height: 1;
+}
+.topbar-nav {
+  display: flex;
+  gap: var(--space-24);
+  justify-content: center;
+}
+.topbar-nav a {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caption);
+  text-decoration: none;
+}
+.topbar-nav a[aria-current="page"] { color: var(--brand-teal); }
+.topbar.over-ink .topbar-nav a[aria-current="page"] { color: var(--teal-light); }
+.topbar-nav a:hover { color: var(--brand-teal); }
+.topbar.over-ink .topbar-nav a:hover { color: var(--teal-light); }
+
+.topbar-right { display: flex; justify-content: flex-end; }
+
+/* Calculator status pill (D-016) — the only teal fill in the header */
+.status-pill {
+  display: inline-block;
+  background: var(--brand-teal);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.086em;
+  padding: var(--space-4) var(--space-16);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.status-pill:hover { background: var(--teal-deep); }
+
+@media (max-width: 767px) {
+  .topbar { grid-template-columns: auto 1fr; }
+  .topbar-brand { font-size: 18px; }
+  .topbar-nav { justify-content: flex-end; gap: var(--space-10); }
+  .topbar-nav a { font-size: 10px; letter-spacing: 0.086em; white-space: nowrap; }
+  .topbar-right { display: none; }
+}
+
+/* ============================================================
+   Floating chrome (§5/§6)
+   ============================================================ */
+
+/* Floating account CTA (D-017) */
+.float-cta {
+  position: fixed;
+  right: var(--space-24);
+  bottom: var(--space-24);
+  z-index: 110;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  background: var(--brand-teal);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.086em;
+  padding: var(--space-10) var(--space-16);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  box-shadow: var(--shadow-float);
+}
+.float-cta:hover { background: var(--teal-deep); }
+
+/* Edge tab (D-018) */
+.edge-tab {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  z-index: 105;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.086em;
+  text-decoration: none;
+  padding: var(--space-16) var(--space-4);
+  background: var(--paper);
+  color: var(--ink);
+  border-right: var(--border-structural); /* left border pre-rotation */
+}
+.edge-tab:hover { color: var(--brand-teal); }
+@media (max-width: 767px) {
+  .edge-tab { display: none; } /* collapses into the footer (§5) */
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--space-24);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--slate);
+}
+
+/* ============================================================
+   Tags & buttons
+   ============================================================ */
+
+/* Bracketed metadata tag — no background, no border (D-015) */
+.tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.086em;
+  white-space: nowrap;
+}
+.tag::before { content: "["; }
+.tag::after  { content: "]"; }
+
+/* Regulatory category tag (D-025) — Ink/Paper only, never path-colored */
+.tag--category { color: var(--ink); }
+.canvas-ink .tag--category { color: var(--paper); }
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-10);
+}
+
+/* Outlined action button (§6) */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  background: transparent;
+  border: var(--border-structural);
+  border-radius: var(--radius-precise);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.086em;
+  padding: var(--space-8) var(--space-16);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-outline:hover { background: var(--mist); }
+.canvas-ink .btn-outline {
+  border-color: var(--paper);
+  color: var(--paper);
+}
+.canvas-ink .btn-outline:hover { background: rgba(251,250,246,.08); }
+
+/* Teal filled button — conversion moments only (§2) */
+.btn-fill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  background: var(--brand-teal);
+  border: none;
+  border-radius: var(--radius-precise);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.086em;
+  padding: var(--space-10) var(--space-20);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-fill:hover { background: var(--teal-deep); }
+
+/* Path chip — wayfinding signposting, one per view (§2) */
+.path-chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.086em;
+  padding: var(--space-4) var(--space-10);
+  border-radius: var(--radius-precise);
+}
+
+/* ============================================================
+   Disclaimer strip (§6) — never smaller than 10px, never hidden
+   ============================================================ */
+.disclaimer {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.086em;
+  text-align: center;
+  padding: var(--space-10) var(--gutter);
+  border-top: var(--border-structural);
+  border-bottom: var(--border-structural);
+}
+.canvas-ink .disclaimer { border-color: var(--paper); }
+.disclaimer--inline {
+  border: var(--border-structural);
+  border-radius: var(--radius-precise);
+  text-align: left;
+  padding: var(--space-8) var(--space-16);
+}
+
+/* ============================================================
+   Structured rows (§6 contact/structured row)
+   ============================================================ */
+.rows { display: flex; flex-direction: column; }
+.row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 2fr;
+  gap: var(--space-24);
+  align-items: baseline;
+  padding: var(--space-24) 0;
+  border-top: 1px solid rgba(22,33,43,.16);
+  text-decoration: none;
+}
+.rows > .row:last-child { border-bottom: 1px solid rgba(22,33,43,.16); }
+.canvas-ink .row { border-color: rgba(251,250,246,.16); }
+.canvas-ink .rows > .row:last-child { border-color: rgba(251,250,246,.16); }
+.row-label { align-self: start; }
+.row-value { line-height: var(--leading-body-longform); max-width: 60ch; }
+@media (max-width: 767px) {
+  .row { grid-template-columns: 1fr; gap: var(--space-10); }
+}
+a.row:hover .row-label { color: var(--brand-teal); }
+.canvas-ink a.row:hover .row-label { color: var(--teal-light); }
+
+/* ============================================================
+   Dose readout (§6) — 4px radius per D-009
+   ============================================================ */
+.dose-readout {
+  display: block;
+  background: var(--white);
+  border: var(--border-structural);
+  border-radius: var(--radius-precise);
+  padding: var(--space-16) var(--space-20);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--brand-teal);
+  font-variant-numeric: tabular-nums;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Peptide card (§6) — no card background, sits on canvas
+   ============================================================ */
+.peptide-card { text-decoration: none; display: block; }
+.peptide-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4) var(--space-10);
+  margin-bottom: var(--space-8);
+}
+.peptide-name {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.peptide-plate {
+  background: var(--mist);
+  border-radius: var(--radius-soft);
+  border: var(--border-structural);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.peptide-plate svg { width: 96px; height: 96px; }
+.peptide-card-body {
+  margin-top: var(--space-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+.peptide-card:hover .peptide-name { color: var(--brand-teal); }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--section-gap) var(--space-24);
+}
+@media (max-width: 767px) {
+  .card-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Source citation row (§6)
+   ============================================================ */
+.citation-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-16);
+  align-items: center;
+  padding: var(--space-16) 0;
+  border-bottom: var(--border-hairline);
+}
+.citation-index {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--brand-teal);
+}
+.citation-title { font-size: var(--text-body); }
+
+/* ============================================================
+   Calculator (§5 — instrument, Paper-only)
+   ============================================================ */
+.calc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--section-gap);
+  align-items: start;
+}
+@media (max-width: 767px) {
+  .calc { grid-template-columns: 1fr; }
+}
+.calc-fields { display: flex; flex-direction: column; gap: var(--space-20); }
+.field { display: flex; flex-direction: column; gap: var(--space-8); }
+.field label { color: var(--slate); }
+.field-input {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  border: var(--border-structural);
+  border-radius: var(--radius-precise);
+}
+.field-input input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  padding: var(--space-10) var(--space-16);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.field-input input:focus { outline: none; }
+.field-input:focus-within { outline: 2px solid var(--brand-teal); outline-offset: 2px; }
+.field-unit {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.086em;
+  color: var(--slate);
+  padding: 0 var(--space-16);
+  border-left: var(--border-hairline);
+}
+.calc-output { display: flex; flex-direction: column; gap: var(--space-16); }
+.calc-steps { display: flex; flex-direction: column; }
+.calc-step {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-16);
+  padding: var(--space-10) 0;
+  border-bottom: var(--border-hairline);
+  font-size: 14px;
+}
+.calc-step .data { font-size: 14px; }
+
+/* ============================================================
+   Hero (§5)
+   ============================================================ */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--section-gap);
+  padding: var(--space-48) var(--gutter) var(--space-100);
+  min-height: 72vh;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; padding-bottom: var(--space-80); }
+}
+.hero-copy { display: flex; flex-direction: column; gap: var(--space-24); }
+.hero-kicker { color: var(--slate); }
+.hero-meta {
+  position: absolute;
+  top: var(--space-24);
+  right: var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-8);
+}
+@media (max-width: 767px) { .hero-meta { display: none; } }
+.hero-object {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-object svg { width: min(300px, 60vw); height: auto; }
+
+/* Page hero (interior pages) */
+.page-head {
+  padding: var(--space-48) var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.footer { padding: var(--section-pad) var(--gutter) var(--space-100); }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--section-gap);
+  margin-top: var(--section-gap);
+}
+@media (max-width: 767px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--paper);
+  text-decoration: none;
+}
+.footer-links { display: flex; flex-direction: column; gap: var(--space-10); }
+.footer-links a {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caption);
+  text-decoration: none;
+  color: var(--paper);
+}
+.footer-links a:hover { color: var(--teal-light); }
+
+/* ============================================================
+   Path theming (§2) — one accent per view, wayfinding only.
+   Set on <body>; the accent never touches dosing content or
+   regulatory tags.
+   ============================================================ */
+body.path-weightloss  { --path-accent: var(--path-weightloss);  --path-tint: var(--path-weightloss-tint); }
+body.path-performance { --path-accent: var(--path-performance); --path-tint: var(--path-performance-tint); }
+body.path-recovery    { --path-accent: var(--path-recovery);    --path-tint: var(--path-recovery-tint); }
+body.path-longevity   { --path-accent: var(--path-longevity);   --path-tint: var(--path-longevity-tint); }
+
+.path-chip {
+  background: var(--path-tint, var(--mist));
+  color: var(--path-accent, var(--ink));
+}
+.path-spine {
+  border-left: 4px solid var(--path-accent, var(--ink));
+  padding-left: var(--space-20);
+}
+
+/* Sourced-slot plate (CONTEXT.md §8) — protocol figures are slots,
+   never hard-coded guesses */
+.sourced-slot {
+  border: 1px dashed var(--slate);
+  border-radius: var(--radius-precise);
+  padding: var(--space-20);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  color: var(--slate);
+}
+
+/* ============================================================
+   Utilities
+   ============================================================ */
+.stack-10 { display: flex; flex-direction: column; gap: var(--space-10); }
+.stack-16 { display: flex; flex-direction: column; gap: var(--space-16); }
+.stack-24 { display: flex; flex-direction: column; gap: var(--space-24); }
+.stack-48 { display: flex; flex-direction: column; gap: var(--space-48); }
+.measure { max-width: 72ch; }
+.mt-48 { margin-top: var(--space-48); }
+.mt-24 { margin-top: var(--space-24); }
+.split {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-16);
+  flex-wrap: wrap;
+}
