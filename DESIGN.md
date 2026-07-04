@@ -393,6 +393,7 @@ New decisions append; nothing is deleted.
 | D-023 | 2026-07-04 | Flat system; exactly two floating elements may carry soft shadows. | Reference elevation model; brand was already flat-first. | Locked |
 | D-024 | 2026-07-04 | Body line-height 1.6 long-form / 1.4 UI. | Deliberate softening of the reference's 1.4 for beginner-facing health reading. | Locked |
 | D-025 | 2026-07-04 | Regulatory category tags (`[RX MEDICATION]` / `[RESEARCH CHEMICAL — NOT FOR HUMAN USE]`) are fixed-vocabulary, monochrome-only, mandatory on peptide cards and guide headers. | Enforces CONTEXT.md's category line at the component level. | Locked |
+| D-026 | 2026-07-04 | Home "paths" section is an interactive switcher — one stage, four mono-caps tabs (4px radius, teal selected state), panel content swaps in place. Monochrome + teal only: home is not a path page, so path accents stay off it per D-008. Pill radius not used (reserved for floating chrome per D-009). | Structural donor: a pasted product-showcase component (per CLAUDE.md donor rule — skeleton kept, skin and words replaced). Avoids four stacked near-identical rows; adds an instrument-like interaction beside the calculator. | Locked |
 
 **Open items beyond the log:** page list confirmation (gates the copy
 interview) · COPY.md (pending) · display-face license (D-003) · brand-object

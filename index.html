@@ -109,25 +109,95 @@
       <p class="muted measure">Not one blended group — four distinct paths, so
         the product meets you where you are.</p>
     </div>
-    <div class="rows">
-      <a class="row" href="/paths/weight-loss.html">
-        <span class="label label--strong row-label">Weight-loss</span>
-        <span class="row-value muted">Medical weight-loss — people using GLP-1s.
-          Often health-motivated and doctor-adjacent.</span>
-      </a>
-      <a class="row" href="/paths/performance.html">
-        <span class="label label--strong row-label">Performance</span>
-        <span class="row-value muted">The gym and bodybuilding community.</span>
-      </a>
-      <a class="row" href="/paths/recovery.html">
-        <span class="label label--strong row-label">Recovery</span>
-        <span class="row-value muted">People using healing and recovery
-          peptides.</span>
-      </a>
-      <a class="row" href="/paths/longevity.html">
-        <span class="label label--strong row-label">Longevity</span>
-        <span class="row-value muted">Biohackers and enthusiasts.</span>
-      </a>
+    <div class="switcher" id="path-switcher">
+      <div class="switch-tabs" role="tablist" aria-label="Paths">
+        <button class="switch-tab" role="tab" aria-selected="true" aria-controls="panel-weightloss" id="tab-weightloss">Weight-loss</button>
+        <button class="switch-tab" role="tab" aria-selected="false" aria-controls="panel-performance" id="tab-performance">Performance</button>
+        <button class="switch-tab" role="tab" aria-selected="false" aria-controls="panel-recovery" id="tab-recovery">Recovery</button>
+        <button class="switch-tab" role="tab" aria-selected="false" aria-controls="panel-longevity" id="tab-longevity">Longevity</button>
+      </div>
+
+      <div class="switch-panel" id="panel-weightloss" role="tabpanel" aria-labelledby="tab-weightloss">
+        <div class="switch-panel-head">
+          <h3 class="heading heading--sm">Weight-loss</h3>
+          <p class="muted">Medical weight-loss — people using GLP-1s. Often
+            health-motivated and doctor-adjacent; a different mindset from the
+            performance crowd.</p>
+          <div><a class="btn-outline" href="/paths/weight-loss.html">View path ↗</a></div>
+        </div>
+        <div class="rows">
+          <a class="row" href="/library.html">
+            <span class="label label--strong row-label">Semaglutide</span>
+            <span class="row-value muted">A GLP-1 receptor agonist.
+              <span class="tag tag--category">Rx medication</span></span>
+          </a>
+          <a class="row" href="/library.html">
+            <span class="label label--strong row-label">Tirzepatide</span>
+            <span class="row-value muted">A GLP-1 receptor agonist.
+              <span class="tag tag--category">Rx medication</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="switch-panel" id="panel-performance" role="tabpanel" aria-labelledby="tab-performance" hidden>
+        <div class="switch-panel-head">
+          <h3 class="heading heading--sm">Performance</h3>
+          <p class="muted">The gym and bodybuilding community.</p>
+          <div><a class="btn-outline" href="/paths/performance.html">View path ↗</a></div>
+        </div>
+        <div class="rows">
+          <a class="row" href="/library.html">
+            <span class="label label--strong row-label">Peptide library</span>
+            <span class="row-value muted">Per-peptide guides with cited
+              sources — start there.</span>
+          </a>
+          <a class="row" href="/calculator.html">
+            <span class="label label--strong row-label">Dosing calculator</span>
+            <span class="row-value muted">Concentration math into syringe
+              units — usable instantly, before any signup.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="switch-panel" id="panel-recovery" role="tabpanel" aria-labelledby="tab-recovery" hidden>
+        <div class="switch-panel-head">
+          <h3 class="heading heading--sm">Recovery</h3>
+          <p class="muted">People using healing and recovery peptides.</p>
+          <div><a class="btn-outline" href="/paths/recovery.html">View path ↗</a></div>
+        </div>
+        <div class="rows">
+          <a class="row" href="/guides/bpc-157.html">
+            <span class="label label--strong row-label">BPC-157</span>
+            <span class="row-value muted">A recovery peptide — guide available.
+              <span class="tag tag--category">Research chemical — not for human use</span></span>
+          </a>
+          <a class="row" href="/library.html">
+            <span class="label label--strong row-label">TB-500</span>
+            <span class="row-value muted">A recovery peptide — guide pending.
+              <span class="tag tag--category">Research chemical — not for human use</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="switch-panel" id="panel-longevity" role="tabpanel" aria-labelledby="tab-longevity" hidden>
+        <div class="switch-panel-head">
+          <h3 class="heading heading--sm">Longevity</h3>
+          <p class="muted">Biohackers and enthusiasts.</p>
+          <div><a class="btn-outline" href="/paths/longevity.html">View path ↗</a></div>
+        </div>
+        <div class="rows">
+          <a class="row" href="/library.html">
+            <span class="label label--strong row-label">Peptide library</span>
+            <span class="row-value muted">Per-peptide guides with cited
+              sources — start there.</span>
+          </a>
+          <a class="row" href="/calculator.html">
+            <span class="label label--strong row-label">Dosing calculator</span>
+            <span class="row-value muted">Concentration math into syringe
+              units — usable instantly, before any signup.</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 

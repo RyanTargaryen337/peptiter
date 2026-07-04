@@ -30,6 +30,25 @@
   update();
 })();
 
+/* Path switcher (D-026) — one stage, four tabs, content swaps in place */
+(function () {
+  var switcher = document.getElementById('path-switcher');
+  if (!switcher) return;
+  var tabs = switcher.querySelectorAll('.switch-tab');
+  var panels = switcher.querySelectorAll('.switch-panel');
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) {
+        t.setAttribute('aria-selected', String(t === tab));
+      });
+      panels.forEach(function (p) {
+        p.hidden = p.id !== tab.getAttribute('aria-controls');
+      });
+    });
+  });
+})();
+
 /* Reconstitution calculator — unit math on user-entered values only.
    It converts concentration + target dose into syringe units; it does not
    originate protocol recommendations (CONTEXT.md §7). U-100 = 100 units/mL. */

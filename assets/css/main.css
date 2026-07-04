@@ -687,6 +687,54 @@ body.path-longevity   { --path-accent: var(--path-longevity);   --path-tint: var
 }
 
 /* ============================================================
+   Path switcher (D-026) — donor skeleton: spatial product
+   showcase. One stage, four tabs, content swaps in place.
+   Monochrome + teal only: home is not a path page (D-008).
+   ============================================================ */
+.switch-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--element-gap);
+  margin-bottom: var(--section-gap);
+}
+.switch-tab {
+  background: transparent;
+  border: var(--border-structural);
+  border-radius: var(--radius-precise);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.086em;
+  padding: var(--space-8) var(--space-16);
+  cursor: pointer;
+}
+.canvas-ink .switch-tab { border-color: var(--paper); color: var(--paper); }
+.switch-tab[aria-selected="true"],
+.canvas-ink .switch-tab[aria-selected="true"] {
+  background: var(--brand-teal);
+  border-color: var(--brand-teal);
+  color: var(--paper);
+}
+.switch-tab:not([aria-selected="true"]):hover { color: var(--teal-light); border-color: var(--teal-light); }
+
+.switch-panel[hidden] { display: none; }
+.switch-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: var(--section-gap);
+  align-items: start;
+  animation: panel-in 0.3s ease-out;
+}
+@media (max-width: 767px) { .switch-panel { grid-template-columns: 1fr; } }
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.switch-panel-head { display: flex; flex-direction: column; gap: var(--space-16); }
+
+/* ============================================================
    Utilities
    ============================================================ */
 .stack-10 { display: flex; flex-direction: column; gap: var(--space-10); }
