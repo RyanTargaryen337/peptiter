@@ -30,29 +30,19 @@
   update();
 })();
 
-/* Hero parallax + scroll reveals (D-029) — restrained, reduced-motion-safe */
+/* Scroll reveals (D-029) — restrained, reduced-motion-safe. The fixed site
+   video (D-030) supplies the persistent background motion on every scroll. */
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var heroVideo = document.querySelector('.hero-bg video');
-  if (heroVideo && !reduce) {
-    var ticking = false;
-    window.addEventListener('scroll', function () {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(function () {
-        heroVideo.style.transform = 'translateY(' + window.scrollY * 0.22 + 'px)';
-        ticking = false;
-      });
-    }, { passive: true });
-  }
-
   if (reduce || !('IntersectionObserver' in window)) return;
-  // Section-level marketing elements only. Deliberately excludes long-form
-  // guide reading content (guides use .page-head + .stack-16, none of these),
-  // so guide body is never hidden — reading surfaces stay static (D-020).
-  var targets = document.querySelectorAll(
-    '.section-head, .peptide-card, .switch-panel-head'
+  // Marketing elements only; anything inside a [data-static] surface
+  // (guides — long-form reading, D-020) is never hidden.
+  var targets = Array.prototype.filter.call(
+    document.querySelectorAll(
+      '.section-head, .peptide-card, .switch-panel-head, .rows .row, .dose-readout'
+    ),
+    function (el) { return !el.closest('[data-static]'); }
   );
   if (!targets.length) return;
 
@@ -160,4 +150,111 @@
     el.addEventListener('input', calc);
   });
   calc();
+
+  /* Peptide selector (D-031) — labels the math and links the guide.
+     Selecting a peptide NEVER prefills a dose: protocol figures are
+     sourced slots (CONTEXT.md §8), and the calculator does unit math
+     on user-entered values only. */
+  var select = document.getElementById('peptide-select');
+  var ctx = document.getElementById('peptide-context');
+  var ctxTag = document.getElementById('peptide-cat');
+  var ctxLink = document.getElementById('peptide-guide');
+  if (!select) return;
+
+  var RX = 'Rx medication';
+  var RC = 'Research chemical — not for human use';
+  var PEPTIDES = {
+    'semaglutide': { name: 'Semaglutide', cat: RX },
+    'tirzepatide': { name: 'Tirzepatide', cat: RX },
+    'ipamorelin':  { name: 'Ipamorelin',  cat: RC },
+    'cjc-1295':    { name: 'CJC-1295',    cat: RC },
+    'sermorelin':  { name: 'Sermorelin',  cat: RC },
+    'bpc-157':     { name: 'BPC-157',     cat: RC },
+    'tb-500':      { name: 'TB-500',      cat: RC },
+    'pt-141':      { name: 'PT-141',      cat: RC },
+    'melanotan':   { name: 'Melanotan',   cat: RC }
+  };
+
+  select.addEventListener('change', function () {
+    var p = PEPTIDES[select.value];
+    if (!p) {
+      ctx.hidden = true;
+      return;
+    }
+    ctxTag.textContent = p.cat;
+    // hash-router build (single-file preview) vs multi-page site
+    var hashRouted = !!document.querySelector('.page[data-route]');
+    ctxLink.setAttribute('href', hashRouted
+      ? '#/guides/' + select.value
+      : '/guides/' + select.value + '.html');
+    ctx.hidden = false;
+  });
+})();
+
+/* Account modal (D-032) — opens from every "create free account" action.
+   Demo-only: the product is idea-stage; no account system exists yet. */
+(function () {
+  var modal = document.getElementById('account-modal');
+  if (!modal) return;
+  var form = document.getElementById('account-form');
+  var email = document.getElementById('acc-email');
+  var pass = document.getElementById('acc-pass');
+  var error = document.getElementById('acc-error');
+  var done = document.getElementById('acc-done');
+  var submit = document.getElementById('acc-submit');
+  var toggle = document.getElementById('acc-toggle');
+  var title = document.getElementById('account-title');
+  var signin = false;
+
+  function open() {
+    modal.hidden = false;
+    form.hidden = false;
+    done.hidden = true;
+    error.hidden = true;
+    email.focus();
+  }
+  function close() { modal.hidden = true; }
+
+  document.querySelectorAll('.float-cta, [data-account-open]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      open();
+    });
+  });
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) close();
+  });
+  modal.querySelectorAll('[data-account-close]').forEach(function (el) {
+    el.addEventListener('click', close);
+  });
+
+  toggle.addEventListener('click', function () {
+    signin = !signin;
+    title.textContent = signin ? 'Sign in' : 'Create a free account';
+    submit.textContent = signin ? 'Sign in' : 'Create free account ↗';
+    toggle.textContent = signin
+      ? 'New here? Create a free account'
+      : 'Already have an account? Sign in';
+    error.hidden = true;
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!email.value || !pass.value) {
+      error.textContent = '[Enter both email and password]';
+      error.hidden = false;
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+      error.textContent = '[Enter a valid email address]';
+      error.hidden = false;
+      return;
+    }
+    error.hidden = true;
+    form.hidden = true;
+    done.hidden = false;
+  });
 })();

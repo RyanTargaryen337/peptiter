@@ -10,6 +10,14 @@
 </head>
 <body>
 
+<!-- Site background video (D-030) — fixed behind every page -->
+<div class="site-bg" aria-hidden="true">
+  <video src="/assets/media/hero-vial.mp4"
+         poster="/assets/media/hero-vial-poster.jpg"
+         autoplay muted loop playsinline></video>
+</div>
+
+
 <header class="topbar">
   <a class="topbar-brand" href="/">PepTiter</a>
   <nav class="topbar-nav" aria-label="Primary">
@@ -136,6 +144,41 @@
 
 <a class="float-cta" href="/#account">Create free account ↗</a>
 <a class="edge-tab" href="/how-we-think.html">How we think</a>
+
+
+<!-- Account modal (D-032) — donor: pasted sign-in card, reskinned -->
+<div class="account-modal" id="account-modal" role="dialog" aria-modal="true" aria-labelledby="account-title" hidden>
+  <div class="account-card">
+    <div class="split">
+      <span class="account-brand">PepTiter</span>
+      <button class="btn-outline" type="button" data-account-close>Close</button>
+    </div>
+    <h2 class="subheading" id="account-title">Create a free account</h2>
+    <p class="muted" style="font-size: 14px;">The account gates saving your log —
+      not the calculator itself. Signing up is what lets you save protocols and
+      track progress over time.</p>
+    <form id="account-form">
+      <div class="field">
+        <label class="label label--xs" for="acc-email">Email</label>
+        <div class="field-input"><input id="acc-email" type="email" autocomplete="email"></div>
+      </div>
+      <div class="field">
+        <label class="label label--xs" for="acc-pass">Password</label>
+        <div class="field-input"><input id="acc-pass" type="password" autocomplete="new-password"></div>
+      </div>
+      <p class="label label--xs account-error" id="acc-error" hidden></p>
+      <button class="btn-fill btn-fill--block" type="submit" id="acc-submit">Create free account ↗</button>
+      <p class="label label--xs muted"><button class="linklike" id="acc-toggle" type="button">Already have an account? Sign in</button></p>
+    </form>
+    <div id="acc-done" class="stack-16" hidden>
+      <span class="tag">Idea stage — accounts are not live yet</span>
+      <p class="muted" style="font-size: 14px;">This website is the first step —
+        the account system isn't built yet. The calculator is open in the
+        meantime: usable instantly, before any signup.</p>
+      <a class="btn-outline" href="/calculator.html">Open calculator ↗</a>
+    </div>
+  </div>
+</div>
 
 <script src="/assets/js/main.js"></script>
 </body>

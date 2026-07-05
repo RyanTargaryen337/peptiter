@@ -175,7 +175,9 @@ BPC-157 (and each future guide).
 - Head: 020 — CALCULATOR · RECONSTITUTION CALCULATOR
 - Subhead: Enter your vial's concentration and target dose — we'll show the
   units. · Tags: [NO SIGNUP] [USABLE INSTANTLY]
-- Field labels: PEPTIDE IN VIAL (mg) · BACTERIOSTATIC WATER ADDED (mL) ·
+- Field labels: PEPTIDE — OPTIONAL (select, default "Not selected"; choosing a
+  peptide shows its category tag + VIEW GUIDE ↗ link and never prefills a
+  figure — D-031) · PEPTIDE IN VIAL (mg) · BACTERIOSTATIC WATER ADDED (mL) ·
   TARGET DOSE (mg)
 - Prefill caption: PREFILLED WITH A GENERIC UNIT-CONVERSION SAMPLE — NOT A
   PROTOCOL RECOMMENDATION FOR ANY NAMED PEPTIDE
@@ -250,6 +252,22 @@ Shared skeleton; per-path lines:
 `[OWNER SLOT — path-specific peptide mappings]` CONTEXT.md maps GLP-1s to
 weight-loss and BPC-157/TB-500 to recovery by name. Performance and longevity
 pages deliberately assert no peptide mapping — supply one if wanted.
+
+---
+
+## 7b. Account modal (D-032 — opens from every "create free account" action)
+
+- Title: Create a free account · toggle mode: Sign in
+- Intro: The account gates saving your log — not the calculator itself.
+  Signing up is what lets you save protocols and track progress over time.
+- Labels: EMAIL · PASSWORD · buttons: CREATE FREE ACCOUNT ↗ / SIGN IN · CLOSE
+- Toggle links: "Already have an account? Sign in" / "New here? Create a free
+  account"
+- Errors (mono, monochrome): [ENTER BOTH EMAIL AND PASSWORD] · [ENTER A VALID
+  EMAIL ADDRESS]
+- Submit state: `[IDEA STAGE — ACCOUNTS ARE NOT LIVE YET]` — This website is
+  the first step — the account system isn't built yet. The calculator is open
+  in the meantime: usable instantly, before any signup. · OPEN CALCULATOR ↗
 
 ---
 
