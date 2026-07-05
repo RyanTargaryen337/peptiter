@@ -970,6 +970,16 @@ body.path-longevity   { --path-accent: var(--path-longevity);   --path-tint: var
 }
 .linklike:hover { color: var(--teal-deep); }
 
+/* Standalone account page (D-035) — the donor's full-page centered card */
+.account-page {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-48) var(--gutter);
+}
+.account-page .account-card { box-shadow: var(--shadow-card); }
+
 /* Select input — instrument voice, same field chrome as calculator */
 .field-input select {
   appearance: none;

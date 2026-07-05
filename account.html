@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create a free account — PepTiter</title>
+<meta name="description" content="The account gates saving your log — not the calculator itself. Signing up is what lets you save protocols and track progress over time.">
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+<!-- Site background video (D-030) — fixed behind every page -->
+<div class="site-bg" aria-hidden="true">
+  <video src="/assets/media/hero-vial.mp4"
+         poster="/assets/media/hero-vial-poster.jpg"
+         autoplay muted loop playsinline></video>
+</div>
+
+<header class="topbar">
+  <a class="topbar-brand" href="/">PepTiter</a>
+  <nav class="topbar-nav" aria-label="Primary">
+    <a href="/library.html">Library</a>
+    <a href="/calculator.html">Calculator</a>
+    <a href="/how-we-think.html">How we think</a>
+  </nav>
+  <div class="topbar-right">
+    <a class="status-pill" href="/calculator.html">Calculator — no signup</a>
+  </div>
+</header>
+
+<!-- Account page (D-035) — donor: pasted sign-in card, full-page instance.
+     No modal on this page; the card below IS the account surface. -->
+<main class="canvas-paper">
+  <div class="account-page">
+    <div class="account-card">
+      <span class="account-brand">PepTiter</span>
+      <h1 class="subheading account-title">Create a free account</h1>
+      <p class="muted" style="font-size: 14px;">The account gates saving your log —
+        not the calculator itself. Signing up is what lets you save protocols and
+        track progress over time.</p>
+      <form class="account-form" novalidate>
+        <label class="field">
+          <span class="label label--xs">Email</span>
+          <span class="field-input"><input class="acc-email" type="email" autocomplete="email"></span>
+        </label>
+        <label class="field">
+          <span class="label label--xs">Password</span>
+          <span class="field-input"><input class="acc-pass" type="password" autocomplete="new-password"></span>
+        </label>
+        <p class="label label--xs account-error" hidden></p>
+        <button class="btn-fill btn-fill--block account-submit" type="submit">Create free account ↗</button>
+        <p class="label label--xs muted"><button class="linklike account-toggle" type="button">Already have an account? Sign in</button></p>
+      </form>
+      <div class="account-done stack-16" hidden>
+        <span class="tag">Idea stage — accounts are not live yet</span>
+        <p class="muted" style="font-size: 14px;">This website is the first step —
+          the account system isn't built yet. The calculator is open in the
+          meantime: usable instantly, before any signup.</p>
+        <a class="btn-outline" href="/calculator.html">Open calculator ↗</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="canvas-ink">
+  <p class="disclaimer">Educational only — not medical advice</p>
+  <div class="footer">
+    <a class="footer-brand" href="/">PepTiter</a>
+    <div class="footer-grid">
+      <p class="muted longform">A free, web-based peptide tracker. Harm-reduction
+        framing, sources cited, not medical advice. GLP-1s are prescription
+        medications; many other peptides are sold as research chemicals not
+        approved for human consumption — they are not the same thing.</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/library.html">Library</a>
+        <a href="/calculator.html">Calculator</a>
+        <a href="/how-we-think.html">How we think</a>
+        <a href="/account.html">Create free account</a>
+        <a href="/paths/weight-loss.html">Weight-loss path</a>
+        <a href="/paths/performance.html">Performance path</a>
+        <a href="/paths/recovery.html">Recovery path</a>
+        <a href="/paths/longevity.html">Longevity path</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<a class="float-cta" href="#account-page-card">Create free account ↗</a>
+<a class="edge-tab" href="/how-we-think.html">How we think</a>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

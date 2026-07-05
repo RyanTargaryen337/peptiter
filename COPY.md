@@ -266,7 +266,10 @@ pages deliberately assert no peptide mapping — supply one if wanted.
 
 ---
 
-## 7b. Account modal (D-032 — opens from every "create free account" action)
+## 7b. Account modal + page (D-032/D-035)
+
+The modal opens from every "create free account" action; `/account.html`
+carries the same card as a standalone page (footer-linked). Shared copy:
 
 - Title: Create a free account · toggle mode: Sign in
 - Intro: The account gates saving your log — not the calculator itself.

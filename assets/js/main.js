@@ -191,27 +191,62 @@
   });
 })();
 
-/* Account modal (D-032) — opens from every "create free account" action.
-   Demo-only: the product is idea-stage; no account system exists yet. */
+/* Account form (D-032/D-035) — one implementation serves the modal and the
+   standalone /account.html page. Demo-only: idea-stage, no account system. */
+(function () {
+  document.querySelectorAll('.account-card').forEach(function (card) {
+    var form = card.querySelector('.account-form');
+    if (!form) return;
+    var email = card.querySelector('.acc-email');
+    var pass = card.querySelector('.acc-pass');
+    var error = card.querySelector('.account-error');
+    var done = card.querySelector('.account-done');
+    var submit = card.querySelector('.account-submit');
+    var toggle = card.querySelector('.account-toggle');
+    var title = card.querySelector('.account-title');
+    var signin = false;
+
+    toggle.addEventListener('click', function () {
+      signin = !signin;
+      title.textContent = signin ? 'Sign in' : 'Create a free account';
+      submit.textContent = signin ? 'Sign in' : 'Create free account ↗';
+      toggle.textContent = signin
+        ? 'New here? Create a free account'
+        : 'Already have an account? Sign in';
+      error.hidden = true;
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!email.value || !pass.value) {
+        error.textContent = '[Enter both email and password]';
+        error.hidden = false;
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        error.textContent = '[Enter a valid email address]';
+        error.hidden = false;
+        return;
+      }
+      error.hidden = true;
+      form.hidden = true;
+      done.hidden = false;
+    });
+  });
+})();
+
+/* Account modal chrome (D-032) — open/close wiring where the modal exists */
 (function () {
   var modal = document.getElementById('account-modal');
   if (!modal) return;
-  var form = document.getElementById('account-form');
-  var email = document.getElementById('acc-email');
-  var pass = document.getElementById('acc-pass');
-  var error = document.getElementById('acc-error');
-  var done = document.getElementById('acc-done');
-  var submit = document.getElementById('acc-submit');
-  var toggle = document.getElementById('acc-toggle');
-  var title = document.getElementById('account-title');
-  var signin = false;
+  var card = modal.querySelector('.account-card');
 
   function open() {
     modal.hidden = false;
-    form.hidden = false;
-    done.hidden = true;
-    error.hidden = true;
-    email.focus();
+    card.querySelector('.account-form').hidden = false;
+    card.querySelector('.account-done').hidden = true;
+    card.querySelector('.account-error').hidden = true;
+    card.querySelector('.acc-email').focus();
   }
   function close() { modal.hidden = true; }
 
@@ -229,32 +264,5 @@
   });
   modal.querySelectorAll('[data-account-close]').forEach(function (el) {
     el.addEventListener('click', close);
-  });
-
-  toggle.addEventListener('click', function () {
-    signin = !signin;
-    title.textContent = signin ? 'Sign in' : 'Create a free account';
-    submit.textContent = signin ? 'Sign in' : 'Create free account ↗';
-    toggle.textContent = signin
-      ? 'New here? Create a free account'
-      : 'Already have an account? Sign in';
-    error.hidden = true;
-  });
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!email.value || !pass.value) {
-      error.textContent = '[Enter both email and password]';
-      error.hidden = false;
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-      error.textContent = '[Enter a valid email address]';
-      error.hidden = false;
-      return;
-    }
-    error.hidden = true;
-    form.hidden = true;
-    done.hidden = false;
   });
 })();

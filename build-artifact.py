@@ -20,6 +20,7 @@ MEDIA = {
 }
 routes = [
     ("home", "index.html", "PepTiter — free, web-based peptide tracker"),
+    ("account", "account.html", "Create a free account — PepTiter"),
     ("library", "library.html", "Library — PepTiter"),
     ("calculator", "calculator.html", "Calculator — PepTiter"),
     ("how-we-think", "how-we-think.html", "How we think about this — PepTiter"),
@@ -35,6 +36,7 @@ for g in GUIDES:
     routes.append((f"guides/{g}", f"guides/{g}.html", t))
 
 HREF = {"/": "#/home", "/index.html": "#/home", "/#account": "#/account",
+        "/account.html": "#/account", "#account-page-card": "#/account",
         "/library.html": "#/library", "/calculator.html": "#/calculator",
         "/how-we-think.html": "#/how-we-think"}
 for p in ["weight-loss", "performance", "recovery", "longevity"]:
@@ -69,12 +71,12 @@ chrome = ('<a class="float-cta" href="#/account">Create free account ↗</a>\n'
 
 router = """
 (function(){var pages=document.querySelectorAll('.page');var navLinks=document.querySelectorAll('.topbar-nav a');
-function show(route){var sa=false;if(route==='account'){route='home';sa=true;}var found=null;
+function show(route){var found=null;
 pages.forEach(function(p){var m=p.dataset.route===route;p.hidden=!m;if(m)found=p;});
 if(!found){pages.forEach(function(p){p.hidden=p.dataset.route!=='home';if(p.dataset.route==='home')found=p;});}
 document.title=found.dataset.title;
 navLinks.forEach(function(a){var t=a.getAttribute('href').slice(2);if(t===route)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
-if(sa){var acc=document.getElementById('account');if(acc)acc.scrollIntoView();}else{window.scrollTo(0,0);}
+window.scrollTo(0,0);
 window.dispatchEvent(new Event('scroll'));}
 function fromHash(){show(location.hash.replace(/^#\\//,'')||'home');}
 window.addEventListener('hashchange',fromHash);fromHash();})();

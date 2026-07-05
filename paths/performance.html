@@ -92,6 +92,7 @@
         <a href="/library.html">Library</a>
         <a href="/calculator.html">Calculator</a>
         <a href="/how-we-think.html">How we think</a>
+        <a href="/account.html">Create free account</a>
         <a href="/paths/weight-loss.html">Weight-loss path</a>
         <a href="/paths/performance.html">Performance path</a>
         <a href="/paths/recovery.html">Recovery path</a>
@@ -106,30 +107,30 @@
 
 
 <!-- Account modal (D-032) — donor: pasted sign-in card, reskinned -->
-<div class="account-modal" id="account-modal" role="dialog" aria-modal="true" aria-labelledby="account-title" hidden>
+<div class="account-modal" id="account-modal" role="dialog" aria-modal="true" aria-label="Create a free account" hidden>
   <div class="account-card">
     <div class="split">
       <span class="account-brand">PepTiter</span>
       <button class="btn-outline" type="button" data-account-close>Close</button>
     </div>
-    <h2 class="subheading" id="account-title">Create a free account</h2>
+    <h2 class="subheading account-title">Create a free account</h2>
     <p class="muted" style="font-size: 14px;">The account gates saving your log —
       not the calculator itself. Signing up is what lets you save protocols and
       track progress over time.</p>
-    <form id="account-form">
-      <div class="field">
-        <label class="label label--xs" for="acc-email">Email</label>
-        <div class="field-input"><input id="acc-email" type="email" autocomplete="email"></div>
-      </div>
-      <div class="field">
-        <label class="label label--xs" for="acc-pass">Password</label>
-        <div class="field-input"><input id="acc-pass" type="password" autocomplete="new-password"></div>
-      </div>
-      <p class="label label--xs account-error" id="acc-error" hidden></p>
-      <button class="btn-fill btn-fill--block" type="submit" id="acc-submit">Create free account ↗</button>
-      <p class="label label--xs muted"><button class="linklike" id="acc-toggle" type="button">Already have an account? Sign in</button></p>
+    <form class="account-form" novalidate>
+      <label class="field">
+        <span class="label label--xs">Email</span>
+        <span class="field-input"><input class="acc-email" type="email" autocomplete="email"></span>
+      </label>
+      <label class="field">
+        <span class="label label--xs">Password</span>
+        <span class="field-input"><input class="acc-pass" type="password" autocomplete="new-password"></span>
+      </label>
+      <p class="label label--xs account-error" hidden></p>
+      <button class="btn-fill btn-fill--block account-submit" type="submit">Create free account ↗</button>
+      <p class="label label--xs muted"><button class="linklike account-toggle" type="button">Already have an account? Sign in</button></p>
     </form>
-    <div id="acc-done" class="stack-16" hidden>
+    <div class="account-done stack-16" hidden>
       <span class="tag">Idea stage — accounts are not live yet</span>
       <p class="muted" style="font-size: 14px;">This website is the first step —
         the account system isn't built yet. The calculator is open in the
