@@ -30,6 +30,42 @@
   update();
 })();
 
+/* Hero parallax + scroll reveals (D-029) — restrained, reduced-motion-safe */
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var heroVideo = document.querySelector('.hero-bg video');
+  if (heroVideo && !reduce) {
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        heroVideo.style.transform = 'translateY(' + window.scrollY * 0.22 + 'px)';
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
+  if (reduce || !('IntersectionObserver' in window)) return;
+  var targets = document.querySelectorAll(
+    '.section-head, .rows .row, .peptide-card, .switch-panel-head, ' +
+    '.dose-readout, .citation-row, .stack-48 > *'
+  );
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  targets.forEach(function (el) {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+})();
+
 /* Respect reduced motion: looping ambient video stays on its poster frame */
 (function () {
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;

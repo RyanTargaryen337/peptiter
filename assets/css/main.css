@@ -636,6 +636,46 @@ a.row:hover .row-label { color: var(--brand-teal); }
   aspect-ratio: 736 / 400;
 }
 
+/* Hero background video (D-028) — full-bleed behind a functional Paper
+   scrim; the one permitted full-bleed treatment, marketing hero only */
+.hero { overflow: hidden; }
+.hero .hero-copy { position: relative; z-index: 1; }
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-bg video {
+  width: 100%;
+  height: 116%; /* headroom for parallax travel */
+  object-fit: cover;
+  will-change: transform;
+}
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  /* functional legibility scrim (D-028), not decoration: strong over the
+     text column, releasing to the right; solid Paper at the base so the
+     canvas flip below stays a hard edge */
+  background:
+    linear-gradient(0deg, var(--paper) 0%, rgba(251,250,246,0) 32%),
+    linear-gradient(90deg, var(--paper) 8%, rgba(251,250,246,.9) 36%, rgba(251,250,246,.55) 62%, rgba(251,250,246,.2) 100%);
+}
+
+/* Scroll reveals (D-029) — applied via JS so no-JS renders everything */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
 /* Page hero (interior pages) */
 .page-head {
   padding: var(--space-48) var(--gutter);

@@ -24,8 +24,15 @@
 
 <main>
 
-  <!-- Hero — Paper -->
+  <!-- Hero — Paper, owner-supplied video full-bleed behind a functional
+       scrim (D-028). Parallax + reveals in main.js (D-029). -->
   <section class="hero canvas-paper">
+    <div class="hero-bg" aria-hidden="true">
+      <video src="/assets/media/hero-vial.mp4"
+             poster="/assets/media/hero-vial-poster.jpg"
+             autoplay muted loop playsinline></video>
+      <div class="hero-scrim"></div>
+    </div>
     <div class="hero-meta">
       <span class="tag">Genuinely free</span>
       <span class="tag">Beginner-friendly</span>
@@ -39,16 +46,6 @@
         library, a reconstitution and dosing calculator, and a personal progress
         log, in one place. Accurate math that prevents dosing errors.</p>
       <p class="label label--strong hero-kicker">Precision dosing <span class="data">·</span> est. 2026</p>
-    </div>
-
-    <div class="hero-object" aria-hidden="true">
-      <!-- Brand-object slot (D-022/D-027): owner-supplied contained video —
-           Mist plate, 24px radius, muted loop, desaturated per §7 -->
-      <div class="media-plate hero-media">
-        <video src="/assets/media/hero-vial.mp4"
-               poster="/assets/media/hero-vial-poster.jpg"
-               autoplay muted loop playsinline></video>
-      </div>
     </div>
 
     <p class="label label--xs scroll-indicator">Scroll ↓</p>
