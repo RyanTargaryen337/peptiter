@@ -37,6 +37,13 @@
   place. Accurate math that prevents dosing errors.
 - Kicker (below): PRECISION DOSING · EST. 2026
 - Metadata tags: [GENUINELY FREE] [BEGINNER-FRIENDLY] [EVERYTHING IN ONE PLACE]
+- CTA row: CREATE FREE ACCOUNT ↗ (opens modal) · OPEN CALCULATOR ↗
+- Trust cards (D-033): calculator preview — `0.25 mg → 25 units · U-100`,
+  caption "Generic unit-conversion sample — not a protocol recommendation",
+  steps CONCENTRATION `1 mg/mL` · VOLUME TO DRAW `0.25 mL` · U-100 SYRINGE
+  `25 units`, actions OPEN CALCULATOR ↗ [NO SIGNUP]; library card — "In the
+  library — every guide cites its sources", marquee of the nine guide links,
+  BROWSE THE LIBRARY ↗
 - Scroll indicator: SCROLL ↓
 
 **001 — What it combines · EVERYTHING IN ONE PLACE**
