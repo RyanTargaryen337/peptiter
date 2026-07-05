@@ -53,21 +53,87 @@
           <div class="field-input">
             <select id="peptide-select">
               <option value="">Not selected</option>
-              <option value="semaglutide">Semaglutide</option>
-              <option value="tirzepatide">Tirzepatide</option>
-              <option value="ipamorelin">Ipamorelin</option>
-              <option value="cjc-1295">CJC-1295</option>
-              <option value="sermorelin">Sermorelin</option>
-              <option value="bpc-157">BPC-157</option>
-              <option value="tb-500">TB-500</option>
-              <option value="pt-141">PT-141</option>
-              <option value="melanotan">Melanotan</option>
+              <optgroup label="GLP-1 receptor agonists & incretins">
+              <option value="semaglutide" data-cat="Rx medication" data-recon="Lyophilized powder.">Semaglutide</option>
+              <option value="tirzepatide" data-cat="Rx medication" data-recon="Lyophilized powder.">Tirzepatide</option>
+              <option value="retatrutide" data-cat="Rx medication" data-recon="Lyophilized powder.">Retatrutide</option>
+              <option value="cagrilintide" data-cat="Rx medication" data-recon="Lyophilized powder.">Cagrilintide</option>
+              <option value="cagrisema" data-cat="Rx medication" data-recon="Contains 5 mg cagrilintide + 5 mg semaglutide — treat as a 10 mg vial; add 2 mL bacteriostatic water (100 units = 10 mg).">CagriSema</option>
+              <option value="survodutide" data-cat="Rx medication" data-recon="Lyophilized powder.">Survodutide</option>
+              </optgroup>
+              <optgroup label="Hormones">
+              <option value="hgh-191aa" data-cat="Rx medication" data-recon="Dosed in international units.">HGH 191AA (Somatropin)</option>
+              <option value="hcg" data-cat="Rx medication" data-recon="Dosed in international units.">HCG</option>
+              </optgroup>
+              <optgroup label="Growth-hormone secretagogues">
+              <option value="ipamorelin" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Ipamorelin</option>
+              <option value="cjc-1295-no-dac" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">CJC-1295 (no DAC)</option>
+              <option value="cjc-1295-ipamorelin" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">CJC-1295 (no DAC) + Ipamorelin</option>
+              <option value="cjc-1295-dac" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">CJC-1295 (with DAC)</option>
+              <option value="sermorelin" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Sermorelin</option>
+              <option value="tesamorelin" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Tesamorelin</option>
+              <option value="hexarelin" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Hexarelin Acetate</option>
+              <option value="ghrp-2" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">GHRP-2 Acetate</option>
+              <option value="ghrp-6" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">GHRP-6 Acetate</option>
+              <option value="mgf" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">MGF</option>
+              <option value="igf-1-lr3" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">IGF-1 LR3</option>
+              <option value="igf-1" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">IGF-1</option>
+              </optgroup>
+              <optgroup label="Recovery & repair peptides">
+              <option value="bpc-157" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">BPC-157</option>
+              <option value="tb-500" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">TB-500</option>
+              <option value="bpc-tb" data-cat="Research chemical — not for human use" data-recon="A 5 mg + 5 mg blend — treat as a 10 mg vial; add 2 mL bacteriostatic water (100 units = 10 mg).">BPC-157 + TB-500</option>
+              <option value="ghk-cu" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">GHK-Cu</option>
+              <option value="kpv" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">KPV</option>
+              <option value="vip" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">VIP</option>
+              <option value="ll-37" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">LL-37</option>
+              <option value="thymalin" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Thymalin</option>
+              <option value="thymosin-alpha-1" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Thymosin Alpha-1</option>
+              <option value="glow" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">GLOW (BBG70)</option>
+              <option value="klow" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">KLOW (Klow80)</option>
+              </optgroup>
+              <optgroup label="Longevity & metabolic">
+              <option value="mots-c" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">MOTS-c</option>
+              <option value="epithalon" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Epithalon</option>
+              <option value="5-amino-1mq" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">5-Amino-1MQ</option>
+              <option value="ss-31" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">SS-31</option>
+              <option value="foxo4-dri" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">FOXO4-DRI</option>
+              <option value="aicar" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">AICAR</option>
+              <option value="adipotide" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Adipotide</option>
+              <option value="aod-9604" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">AOD-9604</option>
+              </optgroup>
+              <optgroup label="Cognitive & signalling">
+              <option value="selank" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Selank</option>
+              <option value="semax" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Semax</option>
+              <option value="dsip" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">DSIP</option>
+              <option value="dermorphin" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Dermorphin</option>
+              <option value="melanotan-1" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Melanotan I</option>
+              <option value="melanotan-2" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Melanotan II</option>
+              <option value="pt-141" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">PT-141</option>
+              <option value="oxytocin" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Oxytocin Acetate</option>
+              <option value="gonadorelin" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Gonadorelin</option>
+              <option value="kisspeptin-10" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">Kisspeptin-10</option>
+              <option value="snap-8" data-cat="Research chemical — not for human use" data-recon="Lyophilized powder.">SNAP-8</option>
+              </optgroup>
+              <optgroup label="Supplements & blends">
+              <option value="shb" data-cat="Supplement / blend" data-recon="Pre-mixed liquid blend — do not reconstitute.">Super Human Blend (SHB)</option>
+              <option value="lc526" data-cat="Supplement / blend" data-recon="Pre-mixed liquid blend — do not reconstitute.">Super Shred (LC526)</option>
+              <option value="lc216" data-cat="Supplement / blend" data-recon="Pre-mixed liquid blend — do not reconstitute.">LC216</option>
+              <option value="nad-plus" data-cat="Supplement / blend" data-recon="Lyophilized powder.">NAD+</option>
+              <option value="ha5" data-cat="Supplement / blend" data-recon="Lyophilized powder.">Hyaluronic Acid (HA5)</option>
+              <option value="vitamin-b12" data-cat="Supplement / blend" data-recon="Pre-mixed liquid blend — do not reconstitute.">Vitamin B12</option>
+              <option value="glutathione" data-cat="Supplement / blend" data-recon="Pre-mixed liquid blend — do not reconstitute.">Glutathione</option>
+              <option value="lemon-bottle" data-cat="Supplement / blend" data-recon="Pre-mixed liquid blend — do not reconstitute.">Lemon Bottle</option>
+              <option value="melatonin" data-cat="Supplement / blend" data-recon="Lyophilized powder.">Melatonin</option>
+              </optgroup>
             </select>
           </div>
           <p class="label label--xs" id="peptide-context" hidden>
             <span class="tag tag--category" id="peptide-cat"></span>
+            <span class="data" id="peptide-recon" style="font-size:12px;"></span>
             <a id="peptide-guide" href="#" style="color: var(--brand-teal);">View guide ↗</a>
           </p>
+          <p class="label label--xs muted" id="peptide-recon-line"><span id="peptide-recon"></span></p>
         </div>
         <div class="field">
           <label class="label label--xs" for="vial-mg">Peptide in vial</label>

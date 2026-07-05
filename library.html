@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Library — PepTiter</title>
-<meta name="description" content="The peptide library. Per-peptide guides: what it is, how to reconstitute it, common protocols, cycle duration, and on-cycle care. Every guide cites its sources.">
+<meta name="description" content="The peptide library. Per-peptide guides with cited sources.">
 <link rel="stylesheet" href="/assets/css/fonts.css">
 <link rel="stylesheet" href="/assets/css/main.css">
 </head>
@@ -16,7 +16,6 @@
          poster="/assets/media/hero-vial-poster.jpg"
          autoplay muted loop playsinline></video>
 </div>
-
 
 <header class="topbar">
   <a class="topbar-brand" href="/">PepTiter</a>
@@ -40,140 +39,17 @@
       it, common protocols, cycle duration, and on-cycle care. Every guide cites
       its sources. Dosage figures come from verified sources supplied by the
       product owner — never fabricated.</p>
+    <div class="hero-cta-row">
+      <a class="btn-outline" href="/reconstitution.html">Reconstitution reference ↗</a>
+      <a class="btn-outline" href="/calculator.html">Open calculator ↗</a>
+    </div>
   </div>
 
-  <!-- Category showcase (D-034) — donor skeleton: spatial product showcase.
-       One stage, four category tabs, a swapping visual plate, real rows. -->
-  <section class="section" style="padding-top: var(--space-24); padding-bottom: var(--space-48);">
-    <div class="switcher" id="category-switcher">
-      <div class="switch-tabs" role="tablist" aria-label="Browse by category">
-        <button class="switch-tab" role="tab" aria-selected="true" aria-controls="cat-glp1" id="tab-glp1">GLP-1s</button>
-        <button class="switch-tab" role="tab" aria-selected="false" aria-controls="cat-gh" id="tab-gh">GH secretagogues</button>
-        <button class="switch-tab" role="tab" aria-selected="false" aria-controls="cat-recovery" id="tab-cat-recovery">Recovery</button>
-        <button class="switch-tab" role="tab" aria-selected="false" aria-controls="cat-others" id="tab-others">Others</button>
-      </div>
-
-      <div class="switch-panel" id="cat-glp1" role="tabpanel" aria-labelledby="tab-glp1">
-        <div class="stage-plate" aria-hidden="true">
-          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/>
-            <circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/>
-            <path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/>
-          </svg>
-        </div>
-        <div class="switch-panel-head">
-          <h2 class="heading heading--sm">GLP-1 receptor agonists</h2>
-          <p class="muted">GLP-1s are prescription medications.</p>
-          <div class="rows">
-            <a class="row" href="/guides/semaglutide.html">
-              <span class="label label--strong row-label">Semaglutide</span>
-              <span class="row-value muted">A GLP-1 receptor agonist.
-                <span class="tag tag--category">Rx medication</span></span>
-            </a>
-            <a class="row" href="/guides/tirzepatide.html">
-              <span class="label label--strong row-label">Tirzepatide</span>
-              <span class="row-value muted">A GLP-1 receptor agonist.
-                <span class="tag tag--category">Rx medication</span></span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="switch-panel" id="cat-gh" role="tabpanel" aria-labelledby="tab-gh" hidden>
-        <div class="stage-plate" aria-hidden="true">
-          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/>
-            <circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/>
-            <path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/>
-          </svg>
-        </div>
-        <div class="switch-panel-head">
-          <h2 class="heading heading--sm">Growth-hormone secretagogues</h2>
-          <p class="muted">Sold as research chemicals — not approved for human
-            consumption.</p>
-          <div class="rows">
-            <a class="row" href="/guides/ipamorelin.html">
-              <span class="label label--strong row-label">Ipamorelin</span>
-              <span class="row-value muted">A growth-hormone secretagogue.
-                <span class="tag tag--category">Research chemical — not for human use</span></span>
-            </a>
-            <a class="row" href="/guides/cjc-1295.html">
-              <span class="label label--strong row-label">CJC-1295</span>
-              <span class="row-value muted">A growth-hormone secretagogue.
-                <span class="tag tag--category">Research chemical — not for human use</span></span>
-            </a>
-            <a class="row" href="/guides/sermorelin.html">
-              <span class="label label--strong row-label">Sermorelin</span>
-              <span class="row-value muted">A growth-hormone secretagogue.
-                <span class="tag tag--category">Research chemical — not for human use</span></span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="switch-panel" id="cat-recovery" role="tabpanel" aria-labelledby="tab-cat-recovery" hidden>
-        <div class="stage-plate" aria-hidden="true">
-          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/>
-            <circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/>
-            <path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/>
-          </svg>
-        </div>
-        <div class="switch-panel-head">
-          <h2 class="heading heading--sm">Recovery peptides</h2>
-          <p class="muted">Sold as research chemicals — not approved for human
-            consumption.</p>
-          <div class="rows">
-            <a class="row" href="/guides/bpc-157.html">
-              <span class="label label--strong row-label">BPC-157</span>
-              <span class="row-value muted">A recovery peptide.
-                <span class="tag tag--category">Research chemical — not for human use</span></span>
-            </a>
-            <a class="row" href="/guides/tb-500.html">
-              <span class="label label--strong row-label">TB-500</span>
-              <span class="row-value muted">A recovery peptide.
-                <span class="tag tag--category">Research chemical — not for human use</span></span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="switch-panel" id="cat-others" role="tabpanel" aria-labelledby="tab-others" hidden>
-        <div class="stage-plate" aria-hidden="true">
-          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="48" cy="26" r="8"/><circle cx="26" cy="66" r="8"/>
-            <circle cx="70" cy="66" r="8"/><path d="M43 33 L31 59 M53 33 L65 59"/>
-          </svg>
-        </div>
-        <div class="switch-panel-head">
-          <h2 class="heading heading--sm">Others</h2>
-          <p class="muted">Sold as research chemicals — not approved for human
-            consumption.</p>
-          <div class="rows">
-            <a class="row" href="/guides/pt-141.html">
-              <span class="label label--strong row-label">PT-141</span>
-              <span class="row-value muted">Listed in the library's "others"
-                category.
-                <span class="tag tag--category">Research chemical — not for human use</span></span>
-            </a>
-            <a class="row" href="/guides/melanotan.html">
-              <span class="label label--strong row-label">Melanotan</span>
-              <span class="row-value muted">Listed in the library's "others"
-                category.
-                <span class="tag tag--category">Research chemical — not for human use</span></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GLP-1s -->
   <section class="section" style="padding-top: var(--space-24);">
     <div class="section-head">
       <p class="label label--xs section-index">011 — Category</p>
-      <h2 class="heading heading--sm">GLP-1 receptor agonists</h2>
-      <p class="muted measure">GLP-1s are prescription medications.</p>
+      <h2 class="heading heading--sm">GLP-1 receptor agonists & incretins</h2>
+      <p class="muted measure">GLP-1s and incretin analogues are prescription medications.</p>
     </div>
     <div class="card-grid">
       <a class="peptide-card" href="/guides/semaglutide.html">
@@ -182,11 +58,7 @@
           <span class="tag tag--category">Rx medication</span>
         </div>
         <div class="peptide-plate" aria-hidden="true">
-          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/>
-            <circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/>
-            <path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/>
-          </svg>
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/><circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/><path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/></svg>
         </div>
         <div class="peptide-card-body">
           <p>A GLP-1 receptor agonist.</p>
@@ -199,27 +71,107 @@
           <span class="tag tag--category">Rx medication</span>
         </div>
         <div class="peptide-plate" aria-hidden="true">
-          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="18" cy="30" r="8"/><circle cx="48" cy="48" r="8"/>
-            <circle cx="18" cy="66" r="8"/><circle cx="78" cy="48" r="8"/>
-            <path d="M25 34 L41 44 M25 62 L41 52 M56 48 L70 48"/>
-          </svg>
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/><circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/><path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/></svg>
         </div>
         <div class="peptide-card-body">
-          <p>A GLP-1 receptor agonist.</p>
+          <p>A prescription medication.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/retatrutide.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Retatrutide</span>
+          <span class="tag tag--category">Rx medication</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/><path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A prescription medication.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/cagrilintide.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Cagrilintide</span>
+          <span class="tag tag--category">Rx medication</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="48" cy="20" r="8"/><circle cx="22" cy="60" r="8"/><circle cx="74" cy="60" r="8"/><path d="M42 26 L28 53 M54 26 L68 53 M30 60 L66 60"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A prescription medication.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/cagrisema.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">CagriSema</span>
+          <span class="tag tag--category">Rx medication</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="48" r="8"/><path d="M28 48 L40 48 M56 48 L68 48"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A prescription-medication blend.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/survodutide.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Survodutide</span>
+          <span class="tag tag--category">Rx medication</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/><circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/><path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A prescription medication.</p>
           <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
         </div>
       </a>
     </div>
   </section>
-
-  <!-- GH secretagogues -->
   <section class="section" style="padding-top: 0;">
     <div class="section-head">
       <p class="label label--xs section-index">012 — Category</p>
+      <h2 class="heading heading--sm">Hormones</h2>
+      <p class="muted measure">Somatropin and hCG are prescription medications.</p>
+    </div>
+    <div class="card-grid">
+      <a class="peptide-card" href="/guides/hgh-191aa.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">HGH 191AA (Somatropin)</span>
+          <span class="tag tag--category">Rx medication</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/><circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/><path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A prescription medication.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/hcg.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">HCG</span>
+          <span class="tag tag--category">Rx medication</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/><path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A prescription medication. On G10K, 10 units = 1,000 IU.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+  <section class="section" style="padding-top: 0;">
+    <div class="section-head">
+      <p class="label label--xs section-index">013 — Category</p>
       <h2 class="heading heading--sm">Growth-hormone secretagogues</h2>
-      <p class="muted measure">Sold as research chemicals — not approved for
-        human consumption.</p>
+      <p class="muted measure">Sold as research chemicals — not approved for human consumption.</p>
     </div>
     <div class="card-grid">
       <a class="peptide-card" href="/guides/ipamorelin.html">
@@ -228,28 +180,46 @@
           <span class="tag tag--category">Research chemical — not for human use</span>
         </div>
         <div class="peptide-plate" aria-hidden="true">
-          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/>
-            <circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/>
-            <path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/>
-          </svg>
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="48" cy="20" r="8"/><circle cx="22" cy="60" r="8"/><circle cx="74" cy="60" r="8"/><path d="M42 26 L28 53 M54 26 L68 53 M30 60 L66 60"/></svg>
         </div>
         <div class="peptide-card-body">
           <p>A growth-hormone secretagogue.</p>
           <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
         </div>
       </a>
-      <a class="peptide-card" href="/guides/cjc-1295.html">
+      <a class="peptide-card" href="/guides/cjc-1295-no-dac.html">
         <div class="peptide-card-head">
-          <span class="peptide-name">CJC-1295</span>
+          <span class="peptide-name">CJC-1295 (no DAC)</span>
           <span class="tag tag--category">Research chemical — not for human use</span>
         </div>
         <div class="peptide-plate" aria-hidden="true">
-          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="48" cy="20" r="8"/><circle cx="22" cy="60" r="8"/>
-            <circle cx="74" cy="60" r="8"/>
-            <path d="M42 26 L28 53 M54 26 L68 53 M30 60 L66 60"/>
-          </svg>
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="48" r="8"/><path d="M28 48 L40 48 M56 48 L68 48"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A growth-hormone secretagogue.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/cjc-1295-ipamorelin.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">CJC-1295 (no DAC) + Ipamorelin</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/><circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/><path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A growth-hormone secretagogue blend.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/cjc-1295-dac.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">CJC-1295 (with DAC)</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/><circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/><path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/></svg>
         </div>
         <div class="peptide-card-body">
           <p>A growth-hormone secretagogue.</p>
@@ -262,27 +232,111 @@
           <span class="tag tag--category">Research chemical — not for human use</span>
         </div>
         <div class="peptide-plate" aria-hidden="true">
-          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="20" cy="48" r="8"/><circle cx="48" cy="48" r="8"/>
-            <circle cx="76" cy="48" r="8"/>
-            <path d="M28 48 L40 48 M56 48 L68 48"/>
-          </svg>
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/><path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/></svg>
         </div>
         <div class="peptide-card-body">
           <p>A growth-hormone secretagogue.</p>
           <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
         </div>
       </a>
+      <a class="peptide-card" href="/guides/tesamorelin.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Tesamorelin</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="48" cy="20" r="8"/><circle cx="22" cy="60" r="8"/><circle cx="74" cy="60" r="8"/><path d="M42 26 L28 53 M54 26 L68 53 M30 60 L66 60"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A growth-hormone secretagogue.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/hexarelin.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Hexarelin Acetate</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="48" r="8"/><path d="M28 48 L40 48 M56 48 L68 48"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A growth-hormone secretagogue.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/ghrp-2.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">GHRP-2 Acetate</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/><circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/><path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A growth-hormone secretagogue.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/ghrp-6.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">GHRP-6 Acetate</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/><circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/><path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A growth-hormone secretagogue.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/mgf.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">MGF</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/><path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/igf-1-lr3.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">IGF-1 LR3</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="48" cy="20" r="8"/><circle cx="22" cy="60" r="8"/><circle cx="74" cy="60" r="8"/><path d="M42 26 L28 53 M54 26 L68 53 M30 60 L66 60"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/igf-1.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">IGF-1</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="48" r="8"/><path d="M28 48 L40 48 M56 48 L68 48"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
     </div>
   </section>
-
-  <!-- Recovery -->
   <section class="section" style="padding-top: 0;">
     <div class="section-head">
-      <p class="label label--xs section-index">013 — Category</p>
-      <h2 class="heading heading--sm">Recovery peptides</h2>
-      <p class="muted measure">Sold as research chemicals — not approved for
-        human consumption.</p>
+      <p class="label label--xs section-index">014 — Category</p>
+      <h2 class="heading heading--sm">Recovery & repair peptides</h2>
+      <p class="muted measure">Sold as research chemicals — not approved for human consumption.</p>
     </div>
     <div class="card-grid">
       <a class="peptide-card" href="/guides/bpc-157.html">
@@ -291,18 +345,11 @@
           <span class="tag tag--category">Research chemical — not for human use</span>
         </div>
         <div class="peptide-plate" aria-hidden="true">
-          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/>
-            <circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/>
-            <path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/>
-          </svg>
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/><circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/><path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/></svg>
         </div>
         <div class="peptide-card-body">
           <p>A recovery peptide.</p>
-          <div class="tag-row">
-            <span class="tag" style="color: var(--brand-teal);">View guide</span>
-            <span class="tag muted">Sources pending</span>
-          </div>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
         </div>
       </a>
       <a class="peptide-card" href="/guides/tb-500.html">
@@ -311,58 +358,518 @@
           <span class="tag tag--category">Research chemical — not for human use</span>
         </div>
         <div class="peptide-plate" aria-hidden="true">
-          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="30" cy="24" r="8"/><circle cx="66" cy="24" r="8"/>
-            <circle cx="48" cy="56" r="8"/><circle cx="48" cy="80" r="6"/>
-            <path d="M35 30 L43 49 M61 30 L53 49 M48 64 L48 74"/>
-          </svg>
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/><circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/><path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/></svg>
         </div>
         <div class="peptide-card-body">
           <p>A recovery peptide.</p>
           <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
         </div>
       </a>
+      <a class="peptide-card" href="/guides/bpc-tb.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">BPC-157 + TB-500</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/><path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A recovery-peptide blend.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/ghk-cu.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">GHK-Cu</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="48" cy="20" r="8"/><circle cx="22" cy="60" r="8"/><circle cx="74" cy="60" r="8"/><path d="M42 26 L28 53 M54 26 L68 53 M30 60 L66 60"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/kpv.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">KPV</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="48" r="8"/><path d="M28 48 L40 48 M56 48 L68 48"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/vip.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">VIP</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/><circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/><path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/ll-37.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">LL-37</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/><circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/><path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/thymalin.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Thymalin</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/><path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/thymosin-alpha-1.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Thymosin Alpha-1</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="48" cy="20" r="8"/><circle cx="22" cy="60" r="8"/><circle cx="74" cy="60" r="8"/><path d="M42 26 L28 53 M54 26 L68 53 M30 60 L66 60"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/glow.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">GLOW (BBG70)</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="48" r="8"/><path d="M28 48 L40 48 M56 48 L68 48"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A recovery-peptide blend: TB-500, BPC-157, GHK-Cu.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/klow.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">KLOW (Klow80)</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/><circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/><path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A recovery-peptide blend: TB-500, BPC-157, GHK-Cu, KPV.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
     </div>
   </section>
-
-  <!-- Others -->
   <section class="section" style="padding-top: 0;">
     <div class="section-head">
-      <p class="label label--xs section-index">014 — Category</p>
-      <h2 class="heading heading--sm">Others</h2>
-      <p class="muted measure">Sold as research chemicals — not approved for
-        human consumption.</p>
+      <p class="label label--xs section-index">015 — Category</p>
+      <h2 class="heading heading--sm">Longevity & metabolic</h2>
+      <p class="muted measure">Sold as research chemicals — not approved for human consumption.</p>
     </div>
     <div class="card-grid">
+      <a class="peptide-card" href="/guides/mots-c.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">MOTS-c</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/><circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/><path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/epithalon.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Epithalon</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/><path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/5-amino-1mq.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">5-Amino-1MQ</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="48" cy="20" r="8"/><circle cx="22" cy="60" r="8"/><circle cx="74" cy="60" r="8"/><path d="M42 26 L28 53 M54 26 L68 53 M30 60 L66 60"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/ss-31.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">SS-31</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="48" r="8"/><path d="M28 48 L40 48 M56 48 L68 48"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/foxo4-dri.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">FOXO4-DRI</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/><circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/><path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/aicar.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">AICAR</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/><circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/><path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/adipotide.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Adipotide</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/><path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/aod-9604.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">AOD-9604</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="48" cy="20" r="8"/><circle cx="22" cy="60" r="8"/><circle cx="74" cy="60" r="8"/><path d="M42 26 L28 53 M54 26 L68 53 M30 60 L66 60"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+  <section class="section" style="padding-top: 0;">
+    <div class="section-head">
+      <p class="label label--xs section-index">016 — Category</p>
+      <h2 class="heading heading--sm">Cognitive & signalling</h2>
+      <p class="muted measure">Sold as research chemicals — not approved for human consumption.</p>
+    </div>
+    <div class="card-grid">
+      <a class="peptide-card" href="/guides/selank.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Selank</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="48" r="8"/><path d="M28 48 L40 48 M56 48 L68 48"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/semax.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Semax</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/><circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/><path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/dsip.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">DSIP</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/><circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/><path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/dermorphin.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Dermorphin</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/><path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/melanotan-1.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Melanotan I</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="48" cy="20" r="8"/><circle cx="22" cy="60" r="8"/><circle cx="74" cy="60" r="8"/><path d="M42 26 L28 53 M54 26 L68 53 M30 60 L66 60"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/melanotan-2.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Melanotan II</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="48" r="8"/><path d="M28 48 L40 48 M56 48 L68 48"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Listed in the library's “others” category.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
       <a class="peptide-card" href="/guides/pt-141.html">
         <div class="peptide-card-head">
           <span class="peptide-name">PT-141</span>
           <span class="tag tag--category">Research chemical — not for human use</span>
         </div>
         <div class="peptide-plate" aria-hidden="true">
-          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="48" cy="26" r="8"/><circle cx="26" cy="66" r="8"/>
-            <circle cx="70" cy="66" r="8"/><path d="M43 33 L31 59 M53 33 L65 59"/>
-          </svg>
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/><circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/><path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/></svg>
         </div>
         <div class="peptide-card-body">
-          <p>Listed in the library's "others" category.</p>
+          <p>Listed in the library's “others” category.</p>
           <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
         </div>
       </a>
-      <a class="peptide-card" href="/guides/melanotan.html">
+      <a class="peptide-card" href="/guides/oxytocin.html">
         <div class="peptide-card-head">
-          <span class="peptide-name">Melanotan</span>
+          <span class="peptide-name">Oxytocin Acetate</span>
           <span class="tag tag--category">Research chemical — not for human use</span>
         </div>
         <div class="peptide-plate" aria-hidden="true">
-          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="26" cy="26" r="8"/><circle cx="70" cy="26" r="8"/>
-            <circle cx="48" cy="60" r="8"/><path d="M31 32 L43 53 M65 32 L53 53"/>
-          </svg>
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/><circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/><path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/></svg>
         </div>
         <div class="peptide-card-body">
-          <p>Listed in the library's "others" category.</p>
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/gonadorelin.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Gonadorelin</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/><path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/kisspeptin-10.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Kisspeptin-10</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="48" cy="20" r="8"/><circle cx="22" cy="60" r="8"/><circle cx="74" cy="60" r="8"/><path d="M42 26 L28 53 M54 26 L68 53 M30 60 L66 60"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/snap-8.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">SNAP-8</span>
+          <span class="tag tag--category">Research chemical — not for human use</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="48" r="8"/><path d="M28 48 L40 48 M56 48 L68 48"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Sold as a research chemical — not approved for human consumption.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+  <section class="section" style="padding-top: 0;">
+    <div class="section-head">
+      <p class="label label--xs section-index">017 — Category</p>
+      <h2 class="heading heading--sm">Supplements & blends</h2>
+      <p class="muted measure">Neither prescription medications nor research chemicals — supplement-style blends and vitamins.</p>
+    </div>
+    <div class="card-grid">
+      <a class="peptide-card" href="/guides/shb.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Super Human Blend (SHB)</span>
+          <span class="tag tag--category">Supplement / blend</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/><circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/><path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A blend: L-Arginine, L-Ornithine, L-Citrulline, L-Lysine, L-Glutamine, L-Proline, L-Taurine, L-Carnitine, NAC.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/lc526.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Super Shred (LC526)</span>
+          <span class="tag tag--category">Supplement / blend</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/><circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/><path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A blend: L-Carnitine, Methionine, Inositol, Choline, B12, B6, NAD+.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/lc216.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">LC216</span>
+          <span class="tag tag--category">Supplement / blend</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/><path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>A blend: L-Carnitine, Arginine, Methionine, Inositol, Choline, B5, B6, B12.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/nad-plus.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">NAD+</span>
+          <span class="tag tag--category">Supplement / blend</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="48" cy="20" r="8"/><circle cx="22" cy="60" r="8"/><circle cx="74" cy="60" r="8"/><path d="M42 26 L28 53 M54 26 L68 53 M30 60 L66 60"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>NAD+.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/ha5.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Hyaluronic Acid (HA5)</span>
+          <span class="tag tag--category">Supplement / blend</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="48" r="8"/><path d="M28 48 L40 48 M56 48 L68 48"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Hyaluronic acid.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/vitamin-b12.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Vitamin B12</span>
+          <span class="tag tag--category">Supplement / blend</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/><circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/><path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Vitamin B12.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/glutathione.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Glutathione</span>
+          <span class="tag tag--category">Supplement / blend</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/><circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/><path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Glutathione.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/lemon-bottle.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Lemon Bottle</span>
+          <span class="tag tag--category">Supplement / blend</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/><circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/><path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Lemon Bottle.</p>
+          <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
+        </div>
+      </a>
+      <a class="peptide-card" href="/guides/melatonin.html">
+        <div class="peptide-card-head">
+          <span class="peptide-name">Melatonin</span>
+          <span class="tag tag--category">Supplement / blend</span>
+        </div>
+        <div class="peptide-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="48" cy="20" r="8"/><circle cx="22" cy="60" r="8"/><circle cx="74" cy="60" r="8"/><path d="M42 26 L28 53 M54 26 L68 53 M30 60 L66 60"/></svg>
+        </div>
+        <div class="peptide-card-body">
+          <p>Melatonin.</p>
           <div class="tag-row"><span class="tag" style="color: var(--brand-teal);">View guide</span></div>
         </div>
       </a>
@@ -383,6 +890,7 @@
       <nav class="footer-links" aria-label="Footer">
         <a href="/library.html">Library</a>
         <a href="/calculator.html">Calculator</a>
+        <a href="/reconstitution.html">Reconstitution</a>
         <a href="/how-we-think.html">How we think</a>
         <a href="/account.html">Create free account</a>
         <a href="/paths/weight-loss.html">Weight-loss path</a>
@@ -394,9 +902,8 @@
   </div>
 </footer>
 
-<a class="float-cta" href="/#account">Create free account ↗</a>
+<a class="float-cta" href="/#account" data-account-open>Create free account ↗</a>
 <a class="edge-tab" href="/how-we-think.html">How we think</a>
-
 
 <!-- Account modal (D-032) — donor: pasted sign-in card, reskinned -->
 <div class="account-modal" id="account-modal" role="dialog" aria-modal="true" aria-label="Create a free account" hidden>

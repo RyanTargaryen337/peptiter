@@ -28,9 +28,10 @@ routes = [
     ("paths/performance", "paths/performance.html", "Performance path — PepTiter"),
     ("paths/recovery", "paths/recovery.html", "Recovery path — PepTiter"),
     ("paths/longevity", "paths/longevity.html", "Longevity path — PepTiter"),
+    ("reconstitution", "reconstitution.html", "Reconstitution reference — PepTiter"),
 ]
-GUIDES = ["bpc-157", "semaglutide", "tirzepatide", "ipamorelin", "cjc-1295",
-          "sermorelin", "tb-500", "pt-141", "melanotan"]
+import glob as _glob
+GUIDES = sorted(g[len("guides/"):-len(".html")] for g in _glob.glob("guides/*.html"))
 for g in GUIDES:
     t = re.search(r"<title>(.*?)</title>", open(f"guides/{g}.html").read()).group(1)
     routes.append((f"guides/{g}", f"guides/{g}.html", t))
@@ -38,6 +39,7 @@ for g in GUIDES:
 HREF = {"/": "#/home", "/index.html": "#/home", "/#account": "#/account",
         "/account.html": "#/account", "#account-page-card": "#/account",
         "/library.html": "#/library", "/calculator.html": "#/calculator",
+        "/reconstitution.html": "#/reconstitution",
         "/how-we-think.html": "#/how-we-think"}
 for p in ["weight-loss", "performance", "recovery", "longevity"]:
     HREF[f"/paths/{p}.html"] = f"#/paths/{p}"

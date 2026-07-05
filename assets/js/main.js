@@ -159,29 +159,18 @@
   var ctx = document.getElementById('peptide-context');
   var ctxTag = document.getElementById('peptide-cat');
   var ctxLink = document.getElementById('peptide-guide');
+  var ctxRecon = document.getElementById('peptide-recon');
   if (!select) return;
 
-  var RX = 'Rx medication';
-  var RC = 'Research chemical — not for human use';
-  var PEPTIDES = {
-    'semaglutide': { name: 'Semaglutide', cat: RX },
-    'tirzepatide': { name: 'Tirzepatide', cat: RX },
-    'ipamorelin':  { name: 'Ipamorelin',  cat: RC },
-    'cjc-1295':    { name: 'CJC-1295',    cat: RC },
-    'sermorelin':  { name: 'Sermorelin',  cat: RC },
-    'bpc-157':     { name: 'BPC-157',     cat: RC },
-    'tb-500':      { name: 'TB-500',      cat: RC },
-    'pt-141':      { name: 'PT-141',      cat: RC },
-    'melanotan':   { name: 'Melanotan',   cat: RC }
-  };
-
   select.addEventListener('change', function () {
-    var p = PEPTIDES[select.value];
-    if (!p) {
+    var opt = select.options[select.selectedIndex];
+    var cat = opt && opt.dataset.cat;
+    if (!select.value || !cat) {
       ctx.hidden = true;
       return;
     }
-    ctxTag.textContent = p.cat;
+    ctxTag.textContent = cat;
+    if (ctxRecon) ctxRecon.textContent = opt.dataset.recon || '';
     // hash-router build (single-file preview) vs multi-page site
     var hashRouted = !!document.querySelector('.page[data-route]');
     ctxLink.setAttribute('href', hashRouted
