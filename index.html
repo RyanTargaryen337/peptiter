@@ -42,15 +42,13 @@
     </div>
 
     <div class="hero-object" aria-hidden="true">
-      <!-- Brand-object slot (D-022): flat SVG placeholder until the
-           commissioned asset exists -->
-      <svg viewBox="0 0 120 160" fill="none" stroke="currentColor" stroke-width="2">
-        <rect x="38" y="8" width="44" height="14" rx="4"/>
-        <path d="M42 22 v10 M78 22 v10"/>
-        <path d="M34 32 h52 v96 a12 12 0 0 1 -12 12 h-28 a12 12 0 0 1 -12 -12 z"/>
-        <path d="M34 76 h52" stroke-width="1.5"/>
-        <path d="M78 90 h-8 M78 104 h-8 M78 118 h-8" stroke-width="1.5"/>
-      </svg>
+      <!-- Brand-object slot (D-022/D-027): owner-supplied contained video —
+           Mist plate, 24px radius, muted loop, desaturated per §7 -->
+      <div class="media-plate hero-media">
+        <video src="/assets/media/hero-vial.mp4"
+               poster="/assets/media/hero-vial-poster.jpg"
+               autoplay muted loop playsinline></video>
+      </div>
     </div>
 
     <p class="label label--xs scroll-indicator">Scroll ↓</p>

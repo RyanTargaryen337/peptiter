@@ -259,9 +259,9 @@ the trust page is one click from everywhere (D-018).
 **Brand-object slot (D-022, open)** — the reference's 3D sculpture role: one
 glossy sculptural object anchoring the hero (~280–340px). PepTiter candidate:
 a rendered droplet/meniscus or vial form in Ink glass. **To be commissioned —
-never faked with CSS.** Until the asset exists the slot renders empty or with
-a flat SVG placeholder; it is the only non-flat element permitted in the
-system.
+never faked with CSS.** Until the asset exists the slot renders empty, with a
+flat SVG placeholder, or with owner-supplied contained video on a Mist plate
+(D-027); it is the only non-flat element permitted in the system.
 
 ---
 
@@ -394,6 +394,7 @@ New decisions append; nothing is deleted.
 | D-024 | 2026-07-04 | Body line-height 1.6 long-form / 1.4 UI. | Deliberate softening of the reference's 1.4 for beginner-facing health reading. | Locked |
 | D-025 | 2026-07-04 | Regulatory category tags (`[RX MEDICATION]` / `[RESEARCH CHEMICAL — NOT FOR HUMAN USE]`) are fixed-vocabulary, monochrome-only, mandatory on peptide cards and guide headers. | Enforces CONTEXT.md's category line at the component level. | Locked |
 | D-026 | 2026-07-04 | Home "paths" section is an interactive switcher — one stage, four mono-caps tabs (4px radius, teal selected state), panel content swaps in place. Monochrome + teal only: home is not a path page, so path accents stay off it per D-008. Pill radius not used (reserved for floating chrome per D-009). | Structural donor: a pasted product-showcase component (per CLAUDE.md donor rule — skeleton kept, skin and words replaced). Avoids four stacked near-identical rows; adds an instrument-like interaction beside the calculator. | Locked |
+| D-027 | 2026-07-05 | The brand-object slot may carry owner-supplied **contained** video until the commissioned asset exists: Mist plate, 24px radius, 1px Ink border, muted loop, no audio track, desaturated, poster fallback, paused under `prefers-reduced-motion`. Full-bleed video/imagery remains forbidden — owner asked for a hero *background*, conflict surfaced per CLAUDE.md, owner chose the contained treatment. §7 and D-021 stand unamended. | Owner-supplied hero video (2026-07-05). Contained treatment keeps §7's rule and suits the 736×400 source. | Locked |
 
 **Open items beyond the log:** page list confirmation (gates the copy
 interview) · COPY.md (pending) · display-face license (D-003) · brand-object

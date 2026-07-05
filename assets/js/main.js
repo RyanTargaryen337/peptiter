@@ -30,6 +30,15 @@
   update();
 })();
 
+/* Respect reduced motion: looping ambient video stays on its poster frame */
+(function () {
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('video[autoplay]').forEach(function (v) {
+    v.removeAttribute('autoplay');
+    v.pause();
+  });
+})();
+
 /* Path switcher (D-026) — one stage, four tabs, content swaps in place */
 (function () {
   var switcher = document.getElementById('path-switcher');
