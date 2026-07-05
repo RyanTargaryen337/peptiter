@@ -124,7 +124,17 @@ claims).
 
 ---
 
-## 4. Guide template (BPC-157)
+## 4. Guide pages (nine — one per CONTEXT.md §7 peptide)
+
+All nine peptides named in CONTEXT.md now have a guide page built from the
+shared template below: Semaglutide · Tirzepatide (GLP-1, `[RX MEDICATION]`) ·
+Ipamorelin · CJC-1295 · Sermorelin (GH secretagogues) · BPC-157 · TB-500
+(recovery) · PT-141 · Melanotan (others) — the last seven all
+`[RESEARCH CHEMICAL — NOT FOR HUMAN USE]`. Every guide's "what it is" keeps the
+category distinction explicit; all protocol/cycle/source content is an empty
+sourced slot. Library cards and the relevant path/switcher rows link to them.
+
+### Shared guide template (shown filled for BPC-157)
 
 - Head: 013 — LIBRARY / RECOVERY PEPTIDES · BPC-157
   · Tags: `[RESEARCH CHEMICAL — NOT FOR HUMAN USE]` [SOURCES PENDING]

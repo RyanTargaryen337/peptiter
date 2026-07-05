@@ -48,10 +48,14 @@
   }
 
   if (reduce || !('IntersectionObserver' in window)) return;
+  // Section-level marketing elements only. Deliberately excludes long-form
+  // guide reading content (guides use .page-head + .stack-16, none of these),
+  // so guide body is never hidden — reading surfaces stay static (D-020).
   var targets = document.querySelectorAll(
-    '.section-head, .rows .row, .peptide-card, .switch-panel-head, ' +
-    '.dose-readout, .citation-row, .stack-48 > *'
+    '.section-head, .peptide-card, .switch-panel-head'
   );
+  if (!targets.length) return;
+
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) {
@@ -64,6 +68,14 @@
     el.classList.add('reveal');
     io.observe(el);
   });
+
+  // Safety net: nothing may stay hidden. If anything is still unrevealed a
+  // few seconds in (observer missed, JS hiccup), reveal it unconditionally.
+  setTimeout(function () {
+    document.querySelectorAll('.reveal:not(.revealed)').forEach(function (el) {
+      el.classList.add('revealed');
+    });
+  }, 3000);
 })();
 
 /* Respect reduced motion: looping ambient video stays on its poster frame */
