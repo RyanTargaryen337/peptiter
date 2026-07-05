@@ -109,6 +109,10 @@ say where it lives (home section? How-we-think page?).
   Dosage figures come from verified sources supplied by the product owner —
   never fabricated.
 
+**Category showcase (D-034)** — tabs GLP-1S · GH SECRETAGOGUES · RECOVERY ·
+OTHERS; each panel: stage plate (category motif) + category heading + its
+category line + peptide rows (same lines as below). Card grid follows.
+
 **Category groups and entries** (from CONTEXT.md §7)
 
 - GLP-1 RECEPTOR AGONISTS — "GLP-1s are prescription medications."

@@ -42,6 +42,132 @@
       product owner — never fabricated.</p>
   </div>
 
+  <!-- Category showcase (D-034) — donor skeleton: spatial product showcase.
+       One stage, four category tabs, a swapping visual plate, real rows. -->
+  <section class="section" style="padding-top: var(--space-24); padding-bottom: var(--space-48);">
+    <div class="switcher" id="category-switcher">
+      <div class="switch-tabs" role="tablist" aria-label="Browse by category">
+        <button class="switch-tab" role="tab" aria-selected="true" aria-controls="cat-glp1" id="tab-glp1">GLP-1s</button>
+        <button class="switch-tab" role="tab" aria-selected="false" aria-controls="cat-gh" id="tab-gh">GH secretagogues</button>
+        <button class="switch-tab" role="tab" aria-selected="false" aria-controls="cat-recovery" id="tab-cat-recovery">Recovery</button>
+        <button class="switch-tab" role="tab" aria-selected="false" aria-controls="cat-others" id="tab-others">Others</button>
+      </div>
+
+      <div class="switch-panel" id="cat-glp1" role="tabpanel" aria-labelledby="tab-glp1">
+        <div class="stage-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="20" cy="48" r="8"/><circle cx="48" cy="30" r="8"/>
+            <circle cx="48" cy="66" r="8"/><circle cx="76" cy="48" r="8"/>
+            <path d="M27 43 L41 34 M27 53 L41 62 M55 34 L69 43 M55 62 L69 53"/>
+          </svg>
+        </div>
+        <div class="switch-panel-head">
+          <h2 class="heading heading--sm">GLP-1 receptor agonists</h2>
+          <p class="muted">GLP-1s are prescription medications.</p>
+          <div class="rows">
+            <a class="row" href="/guides/semaglutide.html">
+              <span class="label label--strong row-label">Semaglutide</span>
+              <span class="row-value muted">A GLP-1 receptor agonist.
+                <span class="tag tag--category">Rx medication</span></span>
+            </a>
+            <a class="row" href="/guides/tirzepatide.html">
+              <span class="label label--strong row-label">Tirzepatide</span>
+              <span class="row-value muted">A GLP-1 receptor agonist.
+                <span class="tag tag--category">Rx medication</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="switch-panel" id="cat-gh" role="tabpanel" aria-labelledby="tab-gh" hidden>
+        <div class="stage-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="24" cy="24" r="8"/><circle cx="72" cy="24" r="8"/>
+            <circle cx="24" cy="72" r="8"/><circle cx="72" cy="72" r="8"/>
+            <path d="M32 24 L64 24 M24 32 L24 64 M72 32 L72 64 M32 72 L64 72"/>
+          </svg>
+        </div>
+        <div class="switch-panel-head">
+          <h2 class="heading heading--sm">Growth-hormone secretagogues</h2>
+          <p class="muted">Sold as research chemicals — not approved for human
+            consumption.</p>
+          <div class="rows">
+            <a class="row" href="/guides/ipamorelin.html">
+              <span class="label label--strong row-label">Ipamorelin</span>
+              <span class="row-value muted">A growth-hormone secretagogue.
+                <span class="tag tag--category">Research chemical — not for human use</span></span>
+            </a>
+            <a class="row" href="/guides/cjc-1295.html">
+              <span class="label label--strong row-label">CJC-1295</span>
+              <span class="row-value muted">A growth-hormone secretagogue.
+                <span class="tag tag--category">Research chemical — not for human use</span></span>
+            </a>
+            <a class="row" href="/guides/sermorelin.html">
+              <span class="label label--strong row-label">Sermorelin</span>
+              <span class="row-value muted">A growth-hormone secretagogue.
+                <span class="tag tag--category">Research chemical — not for human use</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="switch-panel" id="cat-recovery" role="tabpanel" aria-labelledby="tab-cat-recovery" hidden>
+        <div class="stage-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="20" cy="30" r="8"/><circle cx="48" cy="48" r="8"/>
+            <circle cx="76" cy="30" r="8"/><circle cx="48" cy="76" r="8"/>
+            <path d="M26 36 L42 44 M70 36 L54 44 M48 56 L48 68"/>
+          </svg>
+        </div>
+        <div class="switch-panel-head">
+          <h2 class="heading heading--sm">Recovery peptides</h2>
+          <p class="muted">Sold as research chemicals — not approved for human
+            consumption.</p>
+          <div class="rows">
+            <a class="row" href="/guides/bpc-157.html">
+              <span class="label label--strong row-label">BPC-157</span>
+              <span class="row-value muted">A recovery peptide.
+                <span class="tag tag--category">Research chemical — not for human use</span></span>
+            </a>
+            <a class="row" href="/guides/tb-500.html">
+              <span class="label label--strong row-label">TB-500</span>
+              <span class="row-value muted">A recovery peptide.
+                <span class="tag tag--category">Research chemical — not for human use</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="switch-panel" id="cat-others" role="tabpanel" aria-labelledby="tab-others" hidden>
+        <div class="stage-plate" aria-hidden="true">
+          <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="48" cy="26" r="8"/><circle cx="26" cy="66" r="8"/>
+            <circle cx="70" cy="66" r="8"/><path d="M43 33 L31 59 M53 33 L65 59"/>
+          </svg>
+        </div>
+        <div class="switch-panel-head">
+          <h2 class="heading heading--sm">Others</h2>
+          <p class="muted">Sold as research chemicals — not approved for human
+            consumption.</p>
+          <div class="rows">
+            <a class="row" href="/guides/pt-141.html">
+              <span class="label label--strong row-label">PT-141</span>
+              <span class="row-value muted">Listed in the library's "others"
+                category.
+                <span class="tag tag--category">Research chemical — not for human use</span></span>
+            </a>
+            <a class="row" href="/guides/melanotan.html">
+              <span class="label label--strong row-label">Melanotan</span>
+              <span class="row-value muted">Listed in the library's "others"
+                category.
+                <span class="tag tag--category">Research chemical — not for human use</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- GLP-1s -->
   <section class="section" style="padding-top: var(--space-24);">
     <div class="section-head">

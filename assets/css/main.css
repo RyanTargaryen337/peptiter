@@ -898,6 +898,26 @@ body.path-longevity   { --path-accent: var(--path-longevity);   --path-tint: var
 }
 .switch-panel-head { display: flex; flex-direction: column; gap: var(--space-16); }
 
+/* Category stage plate (D-034) — donor's product visual, translated to a
+   Mist plate at the 24px tier with the category motif scaling in */
+.stage-plate {
+  background: var(--mist);
+  border: var(--border-structural);
+  border-radius: var(--radius-soft);
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stage-plate svg { width: 44%; height: auto; }
+.switch-panel:not([hidden]) .stage-plate svg {
+  animation: plate-in 0.45s ease-out;
+}
+@keyframes plate-in {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: none; }
+}
+
 /* ============================================================
    Account modal (D-032) — donor skeleton: pasted sign-in card.
    Skin: White content card (24px tier), instrument inputs, teal

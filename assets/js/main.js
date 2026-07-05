@@ -77,20 +77,20 @@
   });
 })();
 
-/* Path switcher (D-026) — one stage, four tabs, content swaps in place */
+/* Switchers (D-026, D-034) — one stage, tabs, content swaps in place.
+   Generic: any .switcher with .switch-tab[aria-controls] + .switch-panel. */
 (function () {
-  var switcher = document.getElementById('path-switcher');
-  if (!switcher) return;
-  var tabs = switcher.querySelectorAll('.switch-tab');
-  var panels = switcher.querySelectorAll('.switch-panel');
-
-  tabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      tabs.forEach(function (t) {
-        t.setAttribute('aria-selected', String(t === tab));
-      });
-      panels.forEach(function (p) {
-        p.hidden = p.id !== tab.getAttribute('aria-controls');
+  document.querySelectorAll('.switcher').forEach(function (sw) {
+    var tabs = sw.querySelectorAll('.switch-tab');
+    var panels = sw.querySelectorAll('.switch-panel');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) {
+          t.setAttribute('aria-selected', String(t === tab));
+        });
+        panels.forEach(function (p) {
+          p.hidden = p.id !== tab.getAttribute('aria-controls');
+        });
       });
     });
   });
