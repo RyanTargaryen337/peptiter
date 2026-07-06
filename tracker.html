@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracker — PepTiter</title>
+<meta name="description" content="Your personal protocol tracker — log vials, doses, schedules, and beyond-use dates. Account-gated; saves to your browser.">
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+<!-- Site background video (D-030) — fixed behind every page -->
+<div class="site-bg" aria-hidden="true">
+  <video src="/assets/media/hero-vial.mp4"
+         poster="/assets/media/hero-vial-poster.jpg"
+         autoplay muted loop playsinline></video>
+</div>
+
+<header class="topbar">
+  <a class="topbar-brand" href="/">PepTiter</a>
+  <nav class="topbar-nav" aria-label="Primary">
+    <a href="/library.html">Library</a>
+    <a href="/calculator.html">Calculator</a>
+    <a href="/how-we-think.html">How we think</a>
+  </nav>
+  <div class="topbar-right">
+    <a class="status-pill" href="/calculator.html">Calculator — no signup</a>
+  </div>
+</header>
+
+<!-- Tracker is a Paper-only tool surface (D-011). Account-gated (D-038). -->
+<main class="canvas-paper" data-static id="tracker">
+
+  <!-- Gate: shown until the demo account is created (this browser) -->
+  <div class="gate" id="tracker-gate" hidden>
+    <div class="account-card">
+      <span class="account-brand">PepTiter</span>
+      <h1 class="subheading account-title">The tracker is for account holders</h1>
+      <p class="muted" style="font-size: 14px;">The tracker saves your protocols,
+        vials, and dose history — so it lives behind a free account. The
+        calculator and library stay open to everyone, no signup.</p>
+      <form class="account-form" novalidate>
+        <label class="field">
+          <span class="label label--xs">Email</span>
+          <span class="field-input"><input class="acc-email" type="email" autocomplete="email"></span>
+        </label>
+        <label class="field">
+          <span class="label label--xs">Password</span>
+          <span class="field-input"><input class="acc-pass" type="password" autocomplete="new-password"></span>
+        </label>
+        <p class="label label--xs account-error" hidden></p>
+        <button class="btn-fill btn-fill--block" type="submit">Create free account ↗</button>
+      </form>
+      <p class="label label--xs muted">Idea stage — accounts aren't live yet, so
+        this demo unlocks the tracker and saves to this browser only.</p>
+    </div>
+  </div>
+
+  <!-- App: the tracker itself -->
+  <div id="tracker-app" hidden>
+    <div class="page-head">
+      <div class="tracker-head">
+        <div class="stack-10">
+          <p class="label label--xs section-index">040 — Tracker</p>
+          <h1 class="heading">Your bench</h1>
+          <p class="label label--xs muted" id="tracker-meta">0 vials · 0.0 mg on hand</p>
+        </div>
+        <div class="hero-cta-row">
+          <button class="btn-fill" type="button" id="tracker-add">Add vial ↗</button>
+          <button class="btn-outline" type="button" id="tracker-signout">Sign out</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="stack-48">
+
+        <div class="tracker-strip" id="tracker-strip"></div>
+
+        <div class="sourced-slot" id="tracker-empty" style="border-style: dashed;" hidden>
+          <span class="tag">No vials logged yet</span>
+          <p class="longform">Add a vial with its size, water volume, dose and
+            schedule. The bench tracks concentration, units to draw, doses
+            remaining, the next dose, the projected finish, and the beyond-use
+            date — and warns you if it'll expire before you use it up.</p>
+        </div>
+
+        <div class="stack-16">
+          <p class="label label--xs section-index">Next 7 days</p>
+          <div class="tracker-agenda" id="tracker-agenda" hidden></div>
+        </div>
+
+        <div class="stack-16">
+          <p class="label label--xs section-index">All vials</p>
+          <div class="stack-16" id="tracker-roster"></div>
+        </div>
+
+        <p class="disclaimer disclaimer--inline">Educational only — not medical
+          advice · An organisational tool for your own protocol — it doesn't
+          recommend peptides, doses, or schedules. Data saves to this browser only.</p>
+
+      </div>
+    </section>
+  </div>
+
+<!-- Vial form modal (inside main so it travels with the page in the bundle) -->
+<div class="account-modal" id="vial-modal" role="dialog" aria-modal="true" aria-labelledby="vial-modal-title" hidden>
+  <div class="account-card" style="max-width: 640px;">
+    <div class="split">
+      <h2 class="subheading" id="vial-modal-title">New vial</h2>
+      <button class="btn-outline" type="button" data-vial-close>Close</button>
+    </div>
+    <form class="tracker-form" id="vial-form" novalidate>
+      <label class="field">
+        <span class="label label--xs">Peptide</span>
+        <span class="field-input"><input name="name" list="pep-names" placeholder="e.g. BPC-157"></span>
+      </label>
+      <datalist id="pep-names"></datalist>
+
+      <div class="form-grid">
+        <label class="field">
+          <span class="label label--xs">Vial size (mg)</span>
+          <span class="field-input"><input name="vialMg" type="number" step="any" placeholder="10"></span>
+        </label>
+        <label class="field">
+          <span class="label label--xs">Bac water (mL)</span>
+          <span class="field-input"><input name="waterMl" type="number" step="any" placeholder="2"></span>
+        </label>
+        <label class="field">
+          <span class="label label--xs">Dose (mcg)</span>
+          <span class="field-input"><input name="doseMcg" type="number" step="any" placeholder="250"></span>
+        </label>
+      </div>
+
+      <div id="form-live"></div>
+
+      <div class="stack-10">
+        <span class="label label--xs">Schedule</span>
+        <div class="seg seg-schedule">
+          <button type="button" data-sched="daily" aria-pressed="true">Daily</button>
+          <button type="button" data-sched="interval" aria-pressed="false">Every N days</button>
+          <button type="button" data-sched="weekly" aria-pressed="false">Set weekdays</button>
+        </div>
+      </div>
+
+      <label class="field wrap-perDay" style="max-width: 200px;">
+        <span class="label label--xs">Doses per day</span>
+        <span class="field-input"><input name="perDay" type="number" min="1" value="1"></span>
+      </label>
+      <label class="field wrap-interval" hidden style="max-width: 200px;">
+        <span class="label label--xs">Every … days</span>
+        <span class="field-input"><input name="intervalN" type="number" min="1" value="3"></span>
+      </label>
+      <div class="stack-10 wrap-week" hidden>
+        <span class="label label--xs">On these days</span>
+        <div class="seg seg-week"></div>
+      </div>
+
+      <div class="form-grid">
+        <label class="field">
+          <span class="label label--xs">Preferred time (optional)</span>
+          <span class="field-input"><input name="timeOfDay" placeholder="e.g. AM fasted"></span>
+        </label>
+        <div class="stack-10">
+          <span class="label label--xs">Fasted</span>
+          <div class="seg"><button type="button" class="btn-fasted" aria-pressed="false">Fasted</button></div>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <label class="field">
+          <span class="label label--xs">Reconstituted on</span>
+          <span class="field-input"><input name="reconDate" type="date"></span>
+        </label>
+        <label class="field">
+          <span class="label label--xs">Beyond-use (days)</span>
+          <span class="field-input"><input name="beyondUseDays" type="number" min="1" value="28"></span>
+        </label>
+      </div>
+
+      <div class="form-grid">
+        <label class="field">
+          <span class="label label--xs">Storage</span>
+          <span class="field-input"><input name="storage" value="Refrigerated (2–8°C)"></span>
+        </label>
+        <label class="field">
+          <span class="label label--xs">Lot / source (optional)</span>
+          <span class="field-input"><input name="lot" placeholder="optional"></span>
+        </label>
+      </div>
+
+      <label class="field">
+        <span class="label label--xs">Notes (optional)</span>
+        <span class="field-input"><textarea name="notes" rows="2" style="width:100%;border:none;background:transparent;font-family:var(--font-body);color:var(--ink);padding:var(--space-10) var(--space-16);resize:vertical;" placeholder="Side effects, protocol goal, cycle length…"></textarea></span>
+      </label>
+
+      <div class="split" style="justify-content: flex-end;">
+        <button class="btn-outline" type="button" data-vial-close>Cancel</button>
+        <button class="btn-fill" type="submit">Save vial ↗</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+</main>
+
+<footer class="canvas-ink">
+  <p class="disclaimer">Educational only — not medical advice</p>
+  <div class="footer">
+    <a class="footer-brand" href="/">PepTiter</a>
+    <div class="footer-grid">
+      <p class="muted longform">A free, web-based peptide tracker. Harm-reduction
+        framing, sources cited, not medical advice. GLP-1s are prescription
+        medications; many other peptides are sold as research chemicals not
+        approved for human consumption — they are not the same thing.</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/library.html">Library</a>
+        <a href="/calculator.html">Calculator</a>
+        <a href="/reconstitution.html">Reconstitution</a>
+        <a href="/tracker.html">Tracker</a>
+        <a href="/how-we-think.html">How we think</a>
+        <a href="/account.html">Create free account</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<a class="edge-tab" href="/how-we-think.html">How we think</a>
+
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/tracker.js"></script>
+</body>
+</html>

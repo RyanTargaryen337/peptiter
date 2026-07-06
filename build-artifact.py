@@ -13,6 +13,7 @@ fonts_css = re.sub(
     fonts_css)
 main_css = open("assets/css/main.css").read().replace("body.path-", ".page.path-")
 main_js = open("assets/js/main.js").read()
+tracker_js = open("assets/js/tracker.js").read()
 
 MEDIA = {
     "/assets/media/hero-vial.mp4": datauri("assets/media/hero-vial.mp4", "video/mp4"),
@@ -29,6 +30,7 @@ routes = [
     ("paths/recovery", "paths/recovery.html", "Recovery path — PepTiter"),
     ("paths/longevity", "paths/longevity.html", "Longevity path — PepTiter"),
     ("reconstitution", "reconstitution.html", "Reconstitution reference — PepTiter"),
+    ("tracker", "tracker.html", "Tracker — PepTiter"),
 ]
 import glob as _glob
 GUIDES = sorted(g[len("guides/"):-len(".html")] for g in _glob.glob("guides/*.html"))
@@ -40,6 +42,7 @@ HREF = {"/": "#/home", "/index.html": "#/home", "/#account": "#/account",
         "/account.html": "#/account", "#account-page-card": "#/account",
         "/library.html": "#/library", "/calculator.html": "#/calculator",
         "/reconstitution.html": "#/reconstitution",
+        "/tracker.html": "#/tracker",
         "/how-we-think.html": "#/how-we-think"}
 for p in ["weight-loss", "performance", "recovery", "longevity"]:
     HREF[f"/paths/{p}.html"] = f"#/paths/{p}"
@@ -85,7 +88,7 @@ window.addEventListener('hashchange',fromHash);fromHash();})();
 """
 art = (f'<meta charset="utf-8">\n<title>PepTiter</title>\n<style>\n{fonts_css}\n{main_css}\n'
        f'.page[hidden]{{display:none;}}\n</style>\n{sitebg}\n{topbar}\n{pages}\n{footer}\n'
-       f'{chrome}\n{modal}\n<script>\n{router}\n{main_js}\n</script>\n')
+       f'{chrome}\n{modal}\n<script>\n{router}\n{main_js}\n{tracker_js}\n</script>\n')
 out = sys.argv[1]
 open(out, "w").write(art)
 print("bundle:", len(art), "bytes | modals:", art.count('id="account-modal"'),

@@ -154,6 +154,7 @@ FOOTER = '''<footer class="canvas-ink">
         <a href="/library.html">Library</a>
         <a href="/calculator.html">Calculator</a>
         <a href="/reconstitution.html">Reconstitution</a>
+        <a href="/tracker.html">Tracker</a>
         <a href="/how-we-think.html">How we think</a>
         <a href="/account.html">Create free account</a>
         <a href="/paths/weight-loss.html">Weight-loss path</a>

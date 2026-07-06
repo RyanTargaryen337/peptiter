@@ -970,6 +970,151 @@ body.path-longevity   { --path-accent: var(--path-longevity);   --path-tint: var
 }
 .linklike:hover { color: var(--teal-deep); }
 
+/* ============================================================
+   Tracker (D-038) — donor skeleton: pasted "Peptide Bench".
+   Account-gated personal log. Skin: Paper/White, Ink borders,
+   4/24 radius tiers, mono data + label registers, teal at
+   conversion/active only. Donor's dark theme, 5-colour status
+   palette, gradients and glow all stripped; status reads via
+   bracketed mono tags.
+   ============================================================ */
+.gate {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-48) var(--gutter);
+}
+.gate .account-card { box-shadow: var(--shadow-card); text-align: left; }
+
+.tracker-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-16);
+  flex-wrap: wrap;
+  margin-bottom: var(--section-gap);
+}
+
+/* Status strip */
+.tracker-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-16);
+  margin-bottom: var(--section-gap);
+}
+@media (max-width: 640px) { .tracker-strip { grid-template-columns: repeat(2, 1fr); } }
+.strip-stat {
+  border: var(--border-structural);
+  border-radius: var(--radius-precise);
+  padding: var(--space-16);
+  background: var(--white);
+}
+.strip-stat .data { font-size: 28px; }
+.strip-stat.is-flagged { border-color: var(--brand-teal); }
+
+/* Status tag — bracketed mono, teal when active/due, Ink otherwise */
+.status-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.086em;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.status-tag::before { content: "["; }
+.status-tag::after { content: "]"; }
+.status-tag--active { color: var(--brand-teal); }
+.status-tag--warn {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius-precise);
+  padding: 2px 6px;
+}
+.status-tag--warn::before, .status-tag--warn::after { content: ""; }
+
+/* Vial card */
+.vial {
+  display: flex;
+  gap: var(--space-16);
+  border: var(--border-structural);
+  border-radius: var(--radius-soft);
+  background: var(--white);
+  padding: var(--space-16);
+}
+.vial-gauge {
+  width: 20px;
+  min-width: 20px;
+  align-self: stretch;
+  border: var(--border-hairline);
+  border-radius: var(--radius-precise);
+  background: var(--mist);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.vial-gauge-fill { background: var(--brand-teal); transition: height .35s ease; }
+.vial-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--space-10); }
+.vial-title { display: flex; align-items: baseline; gap: var(--space-10); flex-wrap: wrap; }
+.vial-name { font-family: var(--font-mono); font-weight: 500; font-size: 16px; }
+.vial-spec {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--slate);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px var(--space-16);
+}
+.vial-spec .data { font-size: 12px; }
+.vial-readouts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: var(--space-8);
+}
+.readout {
+  border: var(--border-hairline);
+  border-radius: var(--radius-precise);
+  padding: var(--space-8) var(--space-10);
+  background: var(--paper);
+}
+.readout .data { font-size: 15px; }
+.verdict {
+  border: var(--border-structural);
+  border-radius: var(--radius-precise);
+  padding: var(--space-10) var(--space-16);
+  font-size: 14px;
+}
+.tracker-agenda .row-label { font-variant-numeric: tabular-nums; }
+
+/* Tracker form fields reuse .field/.field-input from the calculator */
+.tracker-form { display: flex; flex-direction: column; gap: var(--space-20); }
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-16);
+}
+.seg { display: flex; gap: var(--space-8); flex-wrap: wrap; }
+.seg button {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.086em;
+  padding: var(--space-8) var(--space-16);
+  border: var(--border-structural);
+  border-radius: var(--radius-precise);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+.seg button[aria-pressed="true"] {
+  background: var(--brand-teal);
+  border-color: var(--brand-teal);
+  color: var(--paper);
+}
+
 /* Standalone account page (D-035) — the donor's full-page centered card */
 .account-page {
   min-height: 72vh;

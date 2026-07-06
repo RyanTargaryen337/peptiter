@@ -185,7 +185,10 @@
 (function () {
   document.querySelectorAll('.account-card').forEach(function (card) {
     var form = card.querySelector('.account-form');
-    if (!form) return;
+    // Only the marketing account form (modal + /account.html) is handled here.
+    // Other reused .account-card surfaces (e.g. the tracker gate) wire their
+    // own submit and are skipped.
+    if (!form || !card.querySelector('.account-done')) return;
     var email = card.querySelector('.acc-email');
     var pass = card.querySelector('.acc-pass');
     var error = card.querySelector('.account-error');
